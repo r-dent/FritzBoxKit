@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300D2F471FF4DA4600D6A473 /* FritzBoxKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D2F461FF4DA4600D6A473 /* FritzBoxKit.swift */; };
+		300D2F481FF4DA4600D6A473 /* FritzBoxKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D2F461FF4DA4600D6A473 /* FritzBoxKit.swift */; };
+		300D2F4A1FF4DD8B00D6A473 /* SessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D2F491FF4DD8B00D6A473 /* SessionInfo.swift */; };
+		300D2F4B1FF4DD8B00D6A473 /* SessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D2F491FF4DD8B00D6A473 /* SessionInfo.swift */; };
+		300D2F4D1FF4E14200D6A473 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D2F4C1FF4E14200D6A473 /* Helper.swift */; };
+		300D2F4E1FF4E14200D6A473 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D2F4C1FF4E14200D6A473 /* Helper.swift */; };
+		300D2F541FF4E2BD00D6A473 /* Error+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D2F531FF4E2BD00D6A473 /* Error+Ext.swift */; };
+		300D2F551FF4E2BD00D6A473 /* Error+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D2F531FF4E2BD00D6A473 /* Error+Ext.swift */; };
+		300D2F5A1FF4FC8C00D6A473 /* FritzBoxKit+ResourceLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D2F591FF4FC8C00D6A473 /* FritzBoxKit+ResourceLoading.swift */; };
+		300D2F5B1FF4FC8C00D6A473 /* FritzBoxKit+ResourceLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D2F591FF4FC8C00D6A473 /* FritzBoxKit+ResourceLoading.swift */; };
 		3019E3081FF184C6009AE220 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3019E3071FF184C6009AE220 /* AppDelegate.swift */; };
 		3019E30A1FF184C6009AE220 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3019E3091FF184C6009AE220 /* ViewController.swift */; };
 		3019E30D1FF184C6009AE220 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3019E30B1FF184C6009AE220 /* Main.storyboard */; };
@@ -28,6 +38,11 @@
 
 /* Begin PBXFileReference section */
 		1C48CA3AD762F6087CD01E23 /* Pods-fritzboxkit-Fritz!Box Kit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-Fritz!Box Kit.release.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box Kit/Pods-fritzboxkit-Fritz!Box Kit.release.xcconfig"; sourceTree = "<group>"; };
+		300D2F461FF4DA4600D6A473 /* FritzBoxKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FritzBoxKit.swift; sourceTree = "<group>"; };
+		300D2F491FF4DD8B00D6A473 /* SessionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionInfo.swift; sourceTree = "<group>"; };
+		300D2F4C1FF4E14200D6A473 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		300D2F531FF4E2BD00D6A473 /* Error+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+Ext.swift"; sourceTree = "<group>"; };
+		300D2F591FF4FC8C00D6A473 /* FritzBoxKit+ResourceLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FritzBoxKit+ResourceLoading.swift"; sourceTree = "<group>"; };
 		3019E3041FF184C6009AE220 /* Fritz!Box Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fritz!Box Kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3019E3071FF184C6009AE220 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3019E3091FF184C6009AE220 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		300D2F521FF4E2BD00D6A473 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				300D2F531FF4E2BD00D6A473 /* Error+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		3019E2FB1FF184C6009AE220 = {
 			isa = PBXGroup;
 			children = (
@@ -85,8 +108,13 @@
 		3019E3061FF184C6009AE220 /* Fritz!Box Kit */ = {
 			isa = PBXGroup;
 			children = (
+				300D2F521FF4E2BD00D6A473 /* Extensions */,
 				3019E3071FF184C6009AE220 /* AppDelegate.swift */,
 				3019E3091FF184C6009AE220 /* ViewController.swift */,
+				300D2F461FF4DA4600D6A473 /* FritzBoxKit.swift */,
+				300D2F591FF4FC8C00D6A473 /* FritzBoxKit+ResourceLoading.swift */,
+				300D2F4C1FF4E14200D6A473 /* Helper.swift */,
+				300D2F491FF4DD8B00D6A473 /* SessionInfo.swift */,
 				3019E3271FF1B795009AE220 /* BridgingHeader.h */,
 				3019E30B1FF184C6009AE220 /* Main.storyboard */,
 				3019E30E1FF184C6009AE220 /* Assets.xcassets */,
@@ -232,10 +260,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box Kit/Pods-fritzboxkit-Fritz!Box Kit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AEXML/AEXML.framework",
+				"${BUILT_PRODUCTS_DIR}/XMLMapper/XMLMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AEXML.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMLMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -282,8 +312,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				300D2F541FF4E2BD00D6A473 /* Error+Ext.swift in Sources */,
+				300D2F4A1FF4DD8B00D6A473 /* SessionInfo.swift in Sources */,
+				300D2F471FF4DA4600D6A473 /* FritzBoxKit.swift in Sources */,
+				300D2F4D1FF4E14200D6A473 /* Helper.swift in Sources */,
 				3019E30A1FF184C6009AE220 /* ViewController.swift in Sources */,
 				3019E3081FF184C6009AE220 /* AppDelegate.swift in Sources */,
+				300D2F5A1FF4FC8C00D6A473 /* FritzBoxKit+ResourceLoading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +326,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				300D2F551FF4E2BD00D6A473 /* Error+Ext.swift in Sources */,
+				300D2F481FF4DA4600D6A473 /* FritzBoxKit.swift in Sources */,
 				3019E31D1FF184C6009AE220 /* Fritz_Box_KitTests.swift in Sources */,
+				300D2F5B1FF4FC8C00D6A473 /* FritzBoxKit+ResourceLoading.swift in Sources */,
+				300D2F4B1FF4DD8B00D6A473 /* SessionInfo.swift in Sources */,
+				300D2F4E1FF4E14200D6A473 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

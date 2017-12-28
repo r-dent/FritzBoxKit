@@ -1,4 +1,5 @@
 /Pods
 /Fritz\!Box Kit.xcworkspace
-/.DS_Store
+.DS_Store
 *xcuserdatad*
+/Fritz\!Box Kit/.DS_Store

@@ -7,7 +7,7 @@ inhibit_all_warnings!
 abstract_target 'fritzboxkit' do
     
     pod 'AEXML'
-    #pod 'Alamofire'
+    pod 'XMLMapper'
     
     target 'Fritz!Box Kit'
     
