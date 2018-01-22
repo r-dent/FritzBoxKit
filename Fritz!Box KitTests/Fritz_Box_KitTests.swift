@@ -7,13 +7,19 @@
 //
 
 import XCTest
+import AEXML
 @testable import Fritz_Box_Kit
 
 class Fritz_Box_KitTests: XCTestCase {
     
+    var xmlData: Data!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        if let path = Bundle(for: Fritz_Box_KitTests.self).path(forResource: "devices", ofType: "xml") {
+            xmlData = try? Data(contentsOf: URL(fileURLWithPath: path))
+        }
     }
     
     override func tearDown() {
@@ -24,6 +30,10 @@ class Fritz_Box_KitTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        guard let xml = try? AEXMLDocument(xml: xmlData)
+            else { XCTFail("No XML data"); return }
+        
+        XCTAssertEqual(xml.root.children.count, 3, "Device number count should be correct")
     }
     
     func testPerformanceExample() {

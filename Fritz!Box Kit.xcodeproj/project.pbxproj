@@ -31,6 +31,7 @@
 		3079742D2015ED1800D65712 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079742B2015ED1800D65712 /* Temperature.swift */; };
 		3079742F2015ED4400D65712 /* XMLTemperatureTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079742E2015ED4400D65712 /* XMLTemperatureTransform.swift */; };
 		307974302015ED4400D65712 /* XMLTemperatureTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079742E2015ED4400D65712 /* XMLTemperatureTransform.swift */; };
+		3079743320163E9600D65712 /* devices.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3079743220163E9600D65712 /* devices.xml */; };
 		8E03F1A518E71C14AD318342 /* Pods_fritzboxkit_Fritz_Box_KitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F8052879BC45ED5D4DEB70F /* Pods_fritzboxkit_Fritz_Box_KitTests.framework */; };
 		A64590A69A1F5E1D95346958 /* Pods_fritzboxkit_Fritz_Box_Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65CA0D690E2EB72EE7771B9 /* Pods_fritzboxkit_Fritz_Box_Kit.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		307974282015ECDC00D65712 /* RadiatorRegulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiatorRegulator.swift; sourceTree = "<group>"; };
 		3079742B2015ED1800D65712 /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		3079742E2015ED4400D65712 /* XMLTemperatureTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLTemperatureTransform.swift; sourceTree = "<group>"; };
+		3079743220163E9600D65712 /* devices.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = devices.xml; sourceTree = "<group>"; };
 		38E812380FCF1203682CE0EC /* Pods-fritzboxkit-Fritz!Box KitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-Fritz!Box KitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box KitTests/Pods-fritzboxkit-Fritz!Box KitTests.release.xcconfig"; sourceTree = "<group>"; };
 		60EE3DD1C7A90ADDC2A30030 /* Pods-fritzboxkit-Fritz!Box KitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-Fritz!Box KitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box KitTests/Pods-fritzboxkit-Fritz!Box KitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F8052879BC45ED5D4DEB70F /* Pods_fritzboxkit_Fritz_Box_KitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fritzboxkit_Fritz_Box_KitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +147,7 @@
 		3019E31B1FF184C6009AE220 /* Fritz!Box KitTests */ = {
 			isa = PBXGroup;
 			children = (
+				3079743120163E7300D65712 /* TestResources */,
 				3019E31C1FF184C6009AE220 /* Fritz_Box_KitTests.swift */,
 				3019E31E1FF184C6009AE220 /* Info.plist */,
 			);
@@ -160,6 +163,14 @@
 				3079742E2015ED4400D65712 /* XMLTemperatureTransform.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3079743120163E7300D65712 /* TestResources */ = {
+			isa = PBXGroup;
+			children = (
+				3079743220163E9600D65712 /* devices.xml */,
+			);
+			path = TestResources;
 			sourceTree = "<group>";
 		};
 		624B5D0A5C66F5D800F2E0E8 /* Pods */ = {
@@ -281,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3079743320163E9600D65712 /* devices.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +626,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "rg.test.Fritz-Box-KitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fritz!Box Kit/BridgingHeader.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fritz!Box Kit.app/Fritz!Box Kit";
@@ -632,6 +645,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "rg.test.Fritz-Box-KitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fritz!Box Kit/BridgingHeader.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fritz!Box Kit.app/Fritz!Box Kit";
