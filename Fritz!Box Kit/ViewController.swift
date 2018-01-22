@@ -42,6 +42,17 @@ class ViewController: UIViewController, URLSessionDelegate {
         }
     }
     
+    @IBAction func getDevices(_ sender: Any) {
+        manager.getDevices(completion: { (devices, deviceError) in
+            if let error = deviceError {
+                print("Device Error: \(error)")
+            }
+            else {
+                print("Info: \(devices)")
+            }
+        })
+    }
+    
 
 }
 

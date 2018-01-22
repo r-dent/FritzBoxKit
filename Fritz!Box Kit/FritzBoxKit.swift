@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import AEXML
 
 open class FritzBox: NSObject {
     
     typealias LoginCompletionBlock = (_ session: SessionInfo?, _ error: Error?) -> ()
+    typealias DeviceListCompletionBlock = (_ devices: [Device], _ error: Error?) -> ()
     
     var host: String
     
@@ -25,6 +27,8 @@ open class FritzBox: NSObject {
         self.userName = user
         self.password = password
     }
+    
+    // MARK: - Requests.
     
     func login(completion: LoginCompletionBlock?) {
         let authChallenge = Resource<SessionInfo>(
@@ -79,6 +83,36 @@ open class FritzBox: NSObject {
             self.sessionIdReceived = Date()
             
             completion?(sessionInfo, nil)
+        }
+    }
+    
+    func getDevices(completion: DeviceListCompletionBlock?) {
+        guard
+            let sessionId = self.sessionId,
+            let url = URL(string: "\(host)/webservices/homeautoswitch.lua")
+            else {
+                completion?([], NSError("Session missing"))
+                return
+        }
+        
+        let params: Parameters = [
+            "sid": sessionId,
+            "switchcmd": "getdevicelistinfos"
+        ]
+        
+        let getDevices = Resource<[Device]>(
+            url: url,
+            method: .get,
+            params: params,
+            parse: {
+                guard let xml = try? AEXMLDocument(xml: $0) else {
+                    throw Resource<[Device]>.ParseError.mappingFailed
+                }
+                return xml.root.children.flatMap{ $0.xmlCompact }.flatMap{ Device(XMLString: $0) }
+        })
+        
+        load(getDevices) { (devices, result) in
+            completion?(devices ?? [], (result.isSuccessfulOperation ? nil : NSError(code: result.rawValue)))
         }
     }
 }

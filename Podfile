@@ -10,5 +10,6 @@ abstract_target 'fritzboxkit' do
     pod 'XMLMapper'
     
     target 'Fritz!Box Kit'
+    target 'Fritz!Box KitTests'
     
 end
