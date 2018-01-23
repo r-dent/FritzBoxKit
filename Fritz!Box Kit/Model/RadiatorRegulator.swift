@@ -10,20 +10,20 @@ import XMLMapper
 
 struct RadiatorRegulator: XMLMappable  {
     
-    enum ErrorCode: Int {
+    enum ErrorCode: String {
         case
-        none                    = 0,
+        none                    = "0",
         /// Keine Adaptierung möglich. Gerät korrekt am Heizkörper montiert?
-        adoptionProblem         = 1,
+        adoptionProblem         = "1",
         /// Ventilhub zu kurz oder Batterieleistung zu schwach.
         /// Ventilstößel per Hand mehrmals öfnen und schließen oder neue Batterien einsetzen.
-        ventLow                 = 2,
+        ventLow                 = "2",
         /// Keine Ventilbewegung möglich. Ventilstößel frei?
-        movementProblem         = 3,
-        preparingInstallation   = 4,
+        movementProblem         = "3",
+        preparingInstallation   = "4",
         /// Der Heizkörperregler ist im Installationsmodus und kann auf das Heizungsventil montiert werden.
-        installationMode        = 5,
-        adjusting               = 6
+        installationMode        = "5",
+        adjusting               = "6"
     }
     
     var target: Double = 0

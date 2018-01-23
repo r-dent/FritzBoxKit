@@ -33,10 +33,9 @@
             <tsoll>48</tsoll>
             <absenk>32</absenk>
             <komfort>48</komfort>
-            <lock>0</lock>
-            <devicelock>0</devicelock>
-            <errorcode>0</errorcode>
-            <batterylow>0</batterylow>
+            <lock>1</lock>
+            <errorcode>3</errorcode>
+            <batterylow>1</batterylow>
             <nextchange>
                 <endperiod>1516644000</endperiod>
                 <tchange>32</tchange>
@@ -55,9 +54,8 @@
             <tsoll>48</tsoll>
             <absenk>32</absenk>
             <komfort>48</komfort>
-            <lock>0</lock>
-            <devicelock>0</devicelock>
-            <errorcode>0</errorcode>
+            <devicelock>1</devicelock>
+            <errorcode>6</errorcode>
             <batterylow>0</batterylow>
             <nextchange>
                 <endperiod>1516649400</endperiod>
