@@ -10,9 +10,23 @@ import XMLMapper
 
 struct Device: XMLMappable  {
     
+    struct Feature: OptionSet {
+        
+        let rawValue: Int
+        
+        static let alarmSensor          = Feature(rawValue: 1 << 4)
+        static let radiatorRegulator    = Feature(rawValue: 1 << 6)
+        static let energySensor         = Feature(rawValue: 1 << 7)
+        static let temperatureSensor    = Feature(rawValue: 1 << 8)
+        static let powerSwitch          = Feature(rawValue: 1 << 9)
+        static let dectRepeater         = Feature(rawValue: 1 << 10)
+        
+    }
+    
     var firmwareVersion: String = ""
     var id: String = ""
     var identifier: String = ""
+    var features: Feature = []
     var manufacturer: String = ""
     var productName: String = ""
     var displayName: String = ""
@@ -33,6 +47,14 @@ struct Device: XMLMappable  {
         displayName     <- map["name"]
         temperature     <- map["temperature"]
         hkr             <- map["hkr"]
+        
+        let featureTransform = XMLTransformOf<Feature, String>(fromXML: { (value) -> Feature? in
+            return value.flatMap{ Int($0) }.flatMap{ Feature(rawValue: $0) }
+        }, toXML: {
+            $0.flatMap{ String(format: "%i", $0.rawValue) }
+        })
+        features        <- (map.attributes["functionbitmask"], featureTransform)
+        
     }
     
 }

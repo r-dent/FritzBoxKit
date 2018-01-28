@@ -43,6 +43,7 @@ class MappingTests: XCTestCase {
                 XCTAssertEqual(device.displayName, "Kinderzimmer", "Display name should match.")
                 XCTAssertEqual(device.temperature.celsius, 22, "Temp. should match.")
                 XCTAssertEqual(device.temperature.offset, 0, "Temp. should match.")
+                XCTAssertEqual(device.features, [.temperatureSensor, .radiatorRegulator], "Features should match")
                 
                 XCTAssertEqual(device.hkr.current, 22, "Temp. should match.")
                 XCTAssertEqual(device.hkr.target, 24, "Temp. should match.")
@@ -58,6 +59,7 @@ class MappingTests: XCTestCase {
                 XCTAssertEqual(device.displayName, "Küche", "Display name should match.")
                 XCTAssertEqual(device.temperature.celsius, 23, "Temp. should match.")
                 XCTAssertEqual(device.temperature.offset, 0, "Temp. should match.")
+                XCTAssertEqual(device.features, [.temperatureSensor, .radiatorRegulator], "Features should match")
                 
                 XCTAssertEqual(device.hkr.current, 23, "Temp. should match.")
                 XCTAssertEqual(device.hkr.target, 24, "Temp. should match.")
@@ -73,6 +75,7 @@ class MappingTests: XCTestCase {
                 XCTAssertEqual(device.displayName, "Wohnzimmer", "Display name should match.")
                 XCTAssertEqual(device.temperature.celsius, 24.5, "Temp. should match.")
                 XCTAssertEqual(device.temperature.offset, -20, "Temp. should match.")
+                XCTAssertEqual(device.features, [.temperatureSensor, .radiatorRegulator], "Features should match")
                 
                 XCTAssertEqual(device.hkr.current, 24.5, "Temp. should match.")
                 XCTAssertEqual(device.hkr.target, 24, "Temp. should match.")
