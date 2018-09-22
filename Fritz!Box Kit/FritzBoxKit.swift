@@ -108,7 +108,7 @@ open class FritzBox: NSObject {
                 guard let xml = try? AEXMLDocument(xml: $0) else {
                     throw Resource<[Device]>.ParseError.mappingFailed
                 }
-                return xml.root.children.flatMap{ $0.xmlCompact }.flatMap{ Device(XMLString: $0) }
+                return xml.root.children.compactMap{ $0.xmlCompact }.compactMap{ Device(XMLString: $0) }
         })
         
         load(getDevices) { (devices, result) in

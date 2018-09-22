@@ -34,8 +34,8 @@
 		3079743320163E9600D65712 /* devices.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3079743220163E9600D65712 /* devices.xml */; };
 		3079743520166DFB00D65712 /* XMLBoolTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079743420166DFB00D65712 /* XMLBoolTransform.swift */; };
 		3079743620166DFB00D65712 /* XMLBoolTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079743420166DFB00D65712 /* XMLBoolTransform.swift */; };
-		8E03F1A518E71C14AD318342 /* Pods_fritzboxkit_Fritz_Box_KitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F8052879BC45ED5D4DEB70F /* Pods_fritzboxkit_Fritz_Box_KitTests.framework */; };
-		A64590A69A1F5E1D95346958 /* Pods_fritzboxkit_Fritz_Box_Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65CA0D690E2EB72EE7771B9 /* Pods_fritzboxkit_Fritz_Box_Kit.framework */; };
+		535047813658DABB22BF59E7 /* libPods-fritzboxkit-Fritz!Box KitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7B3BEA6CB1016C47ACF6EE /* libPods-fritzboxkit-Fritz!Box KitTests.a */; };
+		576AF096ECF111B5B2AF2C9C /* libPods-fritzboxkit-Fritz!Box Kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1400697D89401B0995F3D613 /* libPods-fritzboxkit-Fritz!Box Kit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1C48CA3AD762F6087CD01E23 /* Pods-fritzboxkit-Fritz!Box Kit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-Fritz!Box Kit.release.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box Kit/Pods-fritzboxkit-Fritz!Box Kit.release.xcconfig"; sourceTree = "<group>"; };
+		1400697D89401B0995F3D613 /* libPods-fritzboxkit-Fritz!Box Kit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fritzboxkit-Fritz!Box Kit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		300D2F461FF4DA4600D6A473 /* FritzBoxKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FritzBoxKit.swift; sourceTree = "<group>"; };
 		300D2F491FF4DD8B00D6A473 /* SessionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionInfo.swift; sourceTree = "<group>"; };
 		300D2F4C1FF4E14200D6A473 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -72,11 +72,11 @@
 		3079742E2015ED4400D65712 /* XMLTemperatureTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLTemperatureTransform.swift; sourceTree = "<group>"; };
 		3079743220163E9600D65712 /* devices.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = devices.xml; sourceTree = "<group>"; };
 		3079743420166DFB00D65712 /* XMLBoolTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLBoolTransform.swift; sourceTree = "<group>"; };
-		38E812380FCF1203682CE0EC /* Pods-fritzboxkit-Fritz!Box KitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-Fritz!Box KitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box KitTests/Pods-fritzboxkit-Fritz!Box KitTests.release.xcconfig"; sourceTree = "<group>"; };
-		60EE3DD1C7A90ADDC2A30030 /* Pods-fritzboxkit-Fritz!Box KitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-Fritz!Box KitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box KitTests/Pods-fritzboxkit-Fritz!Box KitTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6F8052879BC45ED5D4DEB70F /* Pods_fritzboxkit_Fritz_Box_KitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fritzboxkit_Fritz_Box_KitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7887AA6B16B4AE7C45558760 /* Pods-fritzboxkit-Fritz!Box Kit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-Fritz!Box Kit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box Kit/Pods-fritzboxkit-Fritz!Box Kit.debug.xcconfig"; sourceTree = "<group>"; };
-		E65CA0D690E2EB72EE7771B9 /* Pods_fritzboxkit_Fritz_Box_Kit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fritzboxkit_Fritz_Box_Kit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D7B3BEA6CB1016C47ACF6EE /* libPods-fritzboxkit-Fritz!Box KitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fritzboxkit-Fritz!Box KitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCD27AB3B8DD2ED4260BF03B /* Pods-fritzboxkit-Fritz!Box KitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-Fritz!Box KitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box KitTests/Pods-fritzboxkit-Fritz!Box KitTests.release.xcconfig"; sourceTree = "<group>"; };
+		CEF90BB0D8EB30162ECDEF56 /* Pods-fritzboxkit-Fritz!Box Kit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-Fritz!Box Kit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box Kit/Pods-fritzboxkit-Fritz!Box Kit.debug.xcconfig"; sourceTree = "<group>"; };
+		E932621A97B953CBDFCB27A0 /* Pods-fritzboxkit-Fritz!Box KitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-Fritz!Box KitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box KitTests/Pods-fritzboxkit-Fritz!Box KitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EA7CEC79881BE06A6E3F3299 /* Pods-fritzboxkit-Fritz!Box Kit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-Fritz!Box Kit.release.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box Kit/Pods-fritzboxkit-Fritz!Box Kit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A64590A69A1F5E1D95346958 /* Pods_fritzboxkit_Fritz_Box_Kit.framework in Frameworks */,
+				576AF096ECF111B5B2AF2C9C /* libPods-fritzboxkit-Fritz!Box Kit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E03F1A518E71C14AD318342 /* Pods_fritzboxkit_Fritz_Box_KitTests.framework in Frameworks */,
+				535047813658DABB22BF59E7 /* libPods-fritzboxkit-Fritz!Box KitTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,8 +113,8 @@
 				3019E3061FF184C6009AE220 /* Fritz!Box Kit */,
 				3019E31B1FF184C6009AE220 /* Fritz!Box KitTests */,
 				3019E3051FF184C6009AE220 /* Products */,
-				624B5D0A5C66F5D800F2E0E8 /* Pods */,
-				D0E516188A942E0491267E42 /* Frameworks */,
+				F8DC7A4BF6339AD9836387BF /* Pods */,
+				FCE1C0B92781C38F8F53958A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,22 +177,22 @@
 			path = TestResources;
 			sourceTree = "<group>";
 		};
-		624B5D0A5C66F5D800F2E0E8 /* Pods */ = {
+		F8DC7A4BF6339AD9836387BF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7887AA6B16B4AE7C45558760 /* Pods-fritzboxkit-Fritz!Box Kit.debug.xcconfig */,
-				1C48CA3AD762F6087CD01E23 /* Pods-fritzboxkit-Fritz!Box Kit.release.xcconfig */,
-				60EE3DD1C7A90ADDC2A30030 /* Pods-fritzboxkit-Fritz!Box KitTests.debug.xcconfig */,
-				38E812380FCF1203682CE0EC /* Pods-fritzboxkit-Fritz!Box KitTests.release.xcconfig */,
+				CEF90BB0D8EB30162ECDEF56 /* Pods-fritzboxkit-Fritz!Box Kit.debug.xcconfig */,
+				EA7CEC79881BE06A6E3F3299 /* Pods-fritzboxkit-Fritz!Box Kit.release.xcconfig */,
+				E932621A97B953CBDFCB27A0 /* Pods-fritzboxkit-Fritz!Box KitTests.debug.xcconfig */,
+				CCD27AB3B8DD2ED4260BF03B /* Pods-fritzboxkit-Fritz!Box KitTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		D0E516188A942E0491267E42 /* Frameworks */ = {
+		FCE1C0B92781C38F8F53958A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E65CA0D690E2EB72EE7771B9 /* Pods_fritzboxkit_Fritz_Box_Kit.framework */,
-				6F8052879BC45ED5D4DEB70F /* Pods_fritzboxkit_Fritz_Box_KitTests.framework */,
+				1400697D89401B0995F3D613 /* libPods-fritzboxkit-Fritz!Box Kit.a */,
+				5D7B3BEA6CB1016C47ACF6EE /* libPods-fritzboxkit-Fritz!Box KitTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -204,12 +204,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3019E3211FF184C6009AE220 /* Build configuration list for PBXNativeTarget "Fritz!Box Kit" */;
 			buildPhases = (
-				DF8CC7680D9209D278CF5A57 /* [CP] Check Pods Manifest.lock */,
+				3CDF9F6A5BC11A853E9E7672 /* [CP] Check Pods Manifest.lock */,
 				3019E3001FF184C6009AE220 /* Sources */,
 				3019E3011FF184C6009AE220 /* Frameworks */,
 				3019E3021FF184C6009AE220 /* Resources */,
-				77E507E544C63BECF4BB5F2F /* [CP] Embed Pods Frameworks */,
-				A8CD5ACF490E5B7A92BAAF8F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -224,12 +222,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3019E3241FF184C6009AE220 /* Build configuration list for PBXNativeTarget "Fritz!Box KitTests" */;
 			buildPhases = (
-				72170A0F40A35AB5E8D754F7 /* [CP] Check Pods Manifest.lock */,
+				BDBF7E1CFD2DA86DCF8A0FC5 /* [CP] Check Pods Manifest.lock */,
 				3019E3141FF184C6009AE220 /* Sources */,
 				3019E3151FF184C6009AE220 /* Frameworks */,
 				3019E3161FF184C6009AE220 /* Resources */,
-				C9FAE44C512BD436D4027CCA /* [CP] Embed Pods Frameworks */,
-				2D5E9002C5AA2A91BCD7DE02 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,15 +244,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Roman Gille";
 				TargetAttributes = {
 					3019E3031FF184C6009AE220 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					3019E3171FF184C6009AE220 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 3019E3031FF184C6009AE220;
 					};
@@ -303,95 +301,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2D5E9002C5AA2A91BCD7DE02 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box KitTests/Pods-fritzboxkit-Fritz!Box KitTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		72170A0F40A35AB5E8D754F7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-fritzboxkit-Fritz!Box KitTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		77E507E544C63BECF4BB5F2F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box Kit/Pods-fritzboxkit-Fritz!Box Kit-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AEXML/AEXML.framework",
-				"${BUILT_PRODUCTS_DIR}/XMLMapper/XMLMapper.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AEXML.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMLMapper.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box Kit/Pods-fritzboxkit-Fritz!Box Kit-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A8CD5ACF490E5B7A92BAAF8F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box Kit/Pods-fritzboxkit-Fritz!Box Kit-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C9FAE44C512BD436D4027CCA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box KitTests/Pods-fritzboxkit-Fritz!Box KitTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AEXML/AEXML.framework",
-				"${BUILT_PRODUCTS_DIR}/XMLMapper/XMLMapper.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AEXML.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMLMapper.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box KitTests/Pods-fritzboxkit-Fritz!Box KitTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DF8CC7680D9209D278CF5A57 /* [CP] Check Pods Manifest.lock */ = {
+		3CDF9F6A5BC11A853E9E7672 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -403,6 +313,24 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-fritzboxkit-Fritz!Box Kit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDBF7E1CFD2DA86DCF8A0FC5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fritzboxkit-Fritz!Box KitTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -493,6 +421,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -500,6 +429,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -533,6 +463,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -550,6 +481,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -557,6 +489,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -582,13 +515,14 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		3019E3221FF184C6009AE220 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7887AA6B16B4AE7C45558760 /* Pods-fritzboxkit-Fritz!Box Kit.debug.xcconfig */;
+			baseConfigurationReference = CEF90BB0D8EB30162ECDEF56 /* Pods-fritzboxkit-Fritz!Box Kit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -598,14 +532,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "rg.test.Fritz-Box-Kit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Fritz!Box Kit/BridgingHeader.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		3019E3231FF184C6009AE220 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C48CA3AD762F6087CD01E23 /* Pods-fritzboxkit-Fritz!Box Kit.release.xcconfig */;
+			baseConfigurationReference = EA7CEC79881BE06A6E3F3299 /* Pods-fritzboxkit-Fritz!Box Kit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -615,14 +549,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "rg.test.Fritz-Box-Kit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Fritz!Box Kit/BridgingHeader.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		3019E3251FF184C6009AE220 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60EE3DD1C7A90ADDC2A30030 /* Pods-fritzboxkit-Fritz!Box KitTests.debug.xcconfig */;
+			baseConfigurationReference = E932621A97B953CBDFCB27A0 /* Pods-fritzboxkit-Fritz!Box KitTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -633,7 +567,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "rg.test.Fritz-Box-KitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Fritz!Box Kit/BridgingHeader.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fritz!Box Kit.app/Fritz!Box Kit";
 			};
@@ -641,7 +575,7 @@
 		};
 		3019E3261FF184C6009AE220 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38E812380FCF1203682CE0EC /* Pods-fritzboxkit-Fritz!Box KitTests.release.xcconfig */;
+			baseConfigurationReference = CCD27AB3B8DD2ED4260BF03B /* Pods-fritzboxkit-Fritz!Box KitTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -652,7 +586,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "rg.test.Fritz-Box-KitTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Fritz!Box Kit/BridgingHeader.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fritz!Box Kit.app/Fritz!Box Kit";
 			};

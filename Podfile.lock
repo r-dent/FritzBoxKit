@@ -1,17 +1,22 @@
 PODS:
-  - AEXML (4.2.2)
-  - XMLMapper (1.3.0):
-    - XMLMapper/Core (= 1.3.0)
-  - XMLMapper/Core (1.3.0)
+  - AEXML (4.3.3)
+  - XMLMapper (1.5.1):
+    - XMLMapper/Core (= 1.5.1)
+  - XMLMapper/Core (1.5.1)
 
 DEPENDENCIES:
   - AEXML
   - XMLMapper
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AEXML
+    - XMLMapper
+
 SPEC CHECKSUMS:
-  AEXML: 5ebafc1b75e0bcf0f1b09b8ca8fed2d5a199479b
-  XMLMapper: fce97bc27a37995adf21d4b84c7d2f63bc238aa1
+  AEXML: 601f41fcaa7bda7605cad153b0f43db9ec006c0f
+  XMLMapper: 40841d2d7d134715943c8bca42dabdbcfe03d354
 
-PODFILE CHECKSUM: fefd8f98909a690427230d601e945b864dd52df4
+PODFILE CHECKSUM: e3a996d4b4d612efc874a532fa0b47807c75ddde
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

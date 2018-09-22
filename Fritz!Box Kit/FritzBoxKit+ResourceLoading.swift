@@ -72,7 +72,7 @@ extension FritzBox {
     func load<A>(_ resource: Resource<A>, completion: @escaping (A?, Result) -> Void) -> URLSessionTask? {
         var urlComponents = URLComponents(url: resource.url, resolvingAgainstBaseURL: false)
         urlComponents?.queryItems = resource.params.flatMap{
-            $0.flatMap{
+            $0.compactMap{
                 URLQueryItem(name: $0.key, value: $0.value as? String)
             }
         }
