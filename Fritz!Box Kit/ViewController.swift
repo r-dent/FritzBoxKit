@@ -20,6 +20,10 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        refreshControl = UIRefreshControl()
+        refreshControl!.addTarget(self, action: #selector(loadDevices), for: .valueChanged)
+        refreshControl!.beginRefreshing()
+        
         manager = FritzBox(
             host: "https://.myfritz.net:46048",
             user: "",
@@ -29,6 +33,7 @@ class ViewController: UITableViewController {
         manager.login { [weak self] (info, error) in
             if let error = error {
                 print("Error: \(error)")
+                self?.refreshControl?.endRefreshing()
             }
             else {
                 print("Info: \(String(describing: info))")
@@ -42,15 +47,20 @@ class ViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func loadDevices() {
+    @objc func loadDevices() {
         manager.getDevices(completion: { [weak self] (devices, deviceError) in
             if let error = deviceError {
                 print("Device Error: \(error)")
+                self?.refreshControl?.endRefreshing()
             }
             else {
+                print("Info: \(String(describing: devices))")
+                
                 self?.devices = devices
+                
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
+                    self?.refreshControl?.endRefreshing()
                 }
             }
         })
