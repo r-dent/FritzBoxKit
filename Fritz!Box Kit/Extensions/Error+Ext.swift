@@ -10,8 +10,8 @@ import Foundation
 
 extension NSError {
     
-    convenience init(domain: String = "fritzboxkit", code:Int = 0, _ reason: String? = nil) {
-        self.init(domain: domain, code: 0, userInfo: reason.flatMap{ [NSLocalizedFailureReasonErrorKey: $0] })
+    convenience init(domain: String = "fritzboxkit", code:Int = 0, reason: String? = nil) {
+        self.init(domain: domain, code: code, userInfo: reason.flatMap{ [NSLocalizedFailureReasonErrorKey: $0] })
     }
     
 }

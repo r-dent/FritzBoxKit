@@ -9,12 +9,12 @@
 import UIKit
 import AEXML
 
-class ViewController: UITableViewController {
+class DeviceListViewController: UITableViewController, Instantiatable {
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    var manager: FritzBox!
+    var fritzBox: FritzBox!
     var devices: [Device] = []
 
     override func viewDidLoad() {
@@ -24,22 +24,7 @@ class ViewController: UITableViewController {
         refreshControl!.addTarget(self, action: #selector(loadDevices), for: .valueChanged)
         refreshControl!.beginRefreshing()
         
-        manager = FritzBox(
-            host: "https://.myfritz.net:46048",
-            user: "",
-            password: ""
-        )
-        
-        manager.login { [weak self] (info, error) in
-            if let error = error {
-                print("Error: \(error)")
-                self?.refreshControl?.endRefreshing()
-            }
-            else {
-                print("Info: \(String(describing: info))")
-                self?.loadDevices()
-            }
-        }
+        loadDevices()
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,7 +33,7 @@ class ViewController: UITableViewController {
     }
     
     @objc func loadDevices() {
-        manager.getDevices(completion: { [weak self] (devices, deviceError) in
+        fritzBox.getDevices(completion: { [weak self] (devices, deviceError) in
             if let error = deviceError {
                 print("Device Error: \(error)")
                 self?.refreshControl?.endRefreshing()

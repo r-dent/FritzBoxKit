@@ -18,7 +18,7 @@
 		300D2F5A1FF4FC8C00D6A473 /* FritzBoxKit+ResourceLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D2F591FF4FC8C00D6A473 /* FritzBoxKit+ResourceLoading.swift */; };
 		300D2F5B1FF4FC8C00D6A473 /* FritzBoxKit+ResourceLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D2F591FF4FC8C00D6A473 /* FritzBoxKit+ResourceLoading.swift */; };
 		3019E3081FF184C6009AE220 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3019E3071FF184C6009AE220 /* AppDelegate.swift */; };
-		3019E30A1FF184C6009AE220 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3019E3091FF184C6009AE220 /* ViewController.swift */; };
+		3019E30A1FF184C6009AE220 /* DeviceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3019E3091FF184C6009AE220 /* DeviceListViewController.swift */; };
 		3019E30D1FF184C6009AE220 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3019E30B1FF184C6009AE220 /* Main.storyboard */; };
 		3019E30F1FF184C6009AE220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3019E30E1FF184C6009AE220 /* Assets.xcassets */; };
 		3019E3121FF184C6009AE220 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3019E3101FF184C6009AE220 /* LaunchScreen.storyboard */; };
@@ -34,6 +34,8 @@
 		3079743320163E9600D65712 /* devices.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3079743220163E9600D65712 /* devices.xml */; };
 		3079743520166DFB00D65712 /* XMLBoolTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079743420166DFB00D65712 /* XMLBoolTransform.swift */; };
 		3079743620166DFB00D65712 /* XMLBoolTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079743420166DFB00D65712 /* XMLBoolTransform.swift */; };
+		30D1E8FD2158EB2000BEC592 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1E8FC2158EB1F00BEC592 /* LoginViewController.swift */; };
+		30D1E8FF2158F53200BEC592 /* Instantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1E8FE2158F53200BEC592 /* Instantiatable.swift */; };
 		535047813658DABB22BF59E7 /* libPods-fritzboxkit-Fritz!Box KitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7B3BEA6CB1016C47ACF6EE /* libPods-fritzboxkit-Fritz!Box KitTests.a */; };
 		576AF096ECF111B5B2AF2C9C /* libPods-fritzboxkit-Fritz!Box Kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1400697D89401B0995F3D613 /* libPods-fritzboxkit-Fritz!Box Kit.a */; };
 /* End PBXBuildFile section */
@@ -57,7 +59,7 @@
 		300D2F591FF4FC8C00D6A473 /* FritzBoxKit+ResourceLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FritzBoxKit+ResourceLoading.swift"; sourceTree = "<group>"; };
 		3019E3041FF184C6009AE220 /* Fritz!Box Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fritz!Box Kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3019E3071FF184C6009AE220 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3019E3091FF184C6009AE220 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3019E3091FF184C6009AE220 /* DeviceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListViewController.swift; sourceTree = "<group>"; };
 		3019E30C1FF184C6009AE220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3019E30E1FF184C6009AE220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3019E3111FF184C6009AE220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,6 +74,8 @@
 		3079742E2015ED4400D65712 /* XMLTemperatureTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLTemperatureTransform.swift; sourceTree = "<group>"; };
 		3079743220163E9600D65712 /* devices.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = devices.xml; sourceTree = "<group>"; };
 		3079743420166DFB00D65712 /* XMLBoolTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLBoolTransform.swift; sourceTree = "<group>"; };
+		30D1E8FC2158EB1F00BEC592 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		30D1E8FE2158F53200BEC592 /* Instantiatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instantiatable.swift; sourceTree = "<group>"; };
 		5D7B3BEA6CB1016C47ACF6EE /* libPods-fritzboxkit-Fritz!Box KitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fritzboxkit-Fritz!Box KitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCD27AB3B8DD2ED4260BF03B /* Pods-fritzboxkit-Fritz!Box KitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-Fritz!Box KitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box KitTests/Pods-fritzboxkit-Fritz!Box KitTests.release.xcconfig"; sourceTree = "<group>"; };
 		CEF90BB0D8EB30162ECDEF56 /* Pods-fritzboxkit-Fritz!Box Kit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-Fritz!Box Kit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-Fritz!Box Kit/Pods-fritzboxkit-Fritz!Box Kit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,8 +137,10 @@
 				307974272015ECC300D65712 /* Model */,
 				300D2F521FF4E2BD00D6A473 /* Extensions */,
 				3019E3071FF184C6009AE220 /* AppDelegate.swift */,
-				3019E3091FF184C6009AE220 /* ViewController.swift */,
+				3019E3091FF184C6009AE220 /* DeviceListViewController.swift */,
+				30D1E8FC2158EB1F00BEC592 /* LoginViewController.swift */,
 				300D2F461FF4DA4600D6A473 /* FritzBoxKit.swift */,
+				30D1E8FE2158F53200BEC592 /* Instantiatable.swift */,
 				300D2F591FF4FC8C00D6A473 /* FritzBoxKit+ResourceLoading.swift */,
 				300D2F4C1FF4E14200D6A473 /* Helper.swift */,
 				300D2F491FF4DD8B00D6A473 /* SessionInfo.swift */,
@@ -347,14 +353,16 @@
 				300D2F541FF4E2BD00D6A473 /* Error+Ext.swift in Sources */,
 				3079742F2015ED4400D65712 /* XMLTemperatureTransform.swift in Sources */,
 				300D2F4A1FF4DD8B00D6A473 /* SessionInfo.swift in Sources */,
+				30D1E8FF2158F53200BEC592 /* Instantiatable.swift in Sources */,
 				300D2F471FF4DA4600D6A473 /* FritzBoxKit.swift in Sources */,
 				300D2F4D1FF4E14200D6A473 /* Helper.swift in Sources */,
 				307974292015ECDC00D65712 /* RadiatorRegulator.swift in Sources */,
 				3079743520166DFB00D65712 /* XMLBoolTransform.swift in Sources */,
-				3019E30A1FF184C6009AE220 /* ViewController.swift in Sources */,
+				3019E30A1FF184C6009AE220 /* DeviceListViewController.swift in Sources */,
 				3019E3081FF184C6009AE220 /* AppDelegate.swift in Sources */,
 				300D2F5A1FF4FC8C00D6A473 /* FritzBoxKit+ResourceLoading.swift in Sources */,
 				3079742C2015ED1800D65712 /* Temperature.swift in Sources */,
+				30D1E8FD2158EB2000BEC592 /* LoginViewController.swift in Sources */,
 				304C4FDC1FFAA7560059B9E9 /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

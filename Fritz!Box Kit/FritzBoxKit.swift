@@ -42,8 +42,12 @@ open class FritzBox: NSObject {
         })
         
         load(authChallenge) { (sessionInfo, result) in
+            guard result.isSuccessfulOperation else {
+                completion?(nil, NSError(code: result.rawValue, reason: "Could not load challenge"))
+                return
+            }
             guard let challenge = sessionInfo?.challenge, !challenge.isEmpty else {
-                completion?(nil, NSError())
+                completion?(nil, NSError(reason: "Challenge not found"))
                 return
             }
             self.auth(challenge, completion: completion)
@@ -55,7 +59,7 @@ open class FritzBox: NSObject {
             let name = userName,
             let url = URL(string: "\(host)/login_sid.lua")
             else {
-                completion?(nil, NSError())
+                completion?(nil, NSError(reason: "Name or URL missing or malformed."))
                 return
         }
         
@@ -91,7 +95,7 @@ open class FritzBox: NSObject {
             let sessionId = self.sessionId,
             let url = URL(string: "\(host)/webservices/homeautoswitch.lua")
             else {
-                completion?([], NSError("Session missing"))
+                completion?([], NSError(reason: "Session missing"))
                 return
         }
         
