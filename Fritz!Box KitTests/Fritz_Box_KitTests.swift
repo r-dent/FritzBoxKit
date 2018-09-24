@@ -27,7 +27,7 @@ class MappingTests: XCTestCase {
         super.tearDown()
     }
     
-    func testDevices() {
+    func testObjectMapping() {
         guard let xml = try? AEXMLDocument(xml: xmlData)
             else { XCTFail("No XML data"); return }
         
@@ -38,6 +38,9 @@ class MappingTests: XCTestCase {
         XCTAssertEqual(mappedDevices.count, 3, "Mapped Device number count should be correct")
         
         for (index, device) in mappedDevices.enumerated() {
+            
+            XCTAssertEqual(device.temperature?.celsius, device.hkr?.current, "Measured temperatures schould match")
+            
             switch index {
             case 1:
                 XCTAssertEqual(device.displayName, "Kinderzimmer", "Display name should match.")
@@ -88,8 +91,6 @@ class MappingTests: XCTestCase {
                 XCTAssertEqual(device.hkr?.batteryLow, false, "Value should match.")
             }
         }
-        
-        
     }
     
     func testPerformanceExample() {
