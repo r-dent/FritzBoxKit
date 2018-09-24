@@ -12,7 +12,7 @@ struct RadiatorRegulator: XMLMappable  {
     
     enum ErrorCode: String {
         case
-        none                    = "0",
+        noError                 = "0",
         /// Keine Adaptierung möglich. Gerät korrekt am Heizkörper montiert?
         adoptionProblem         = "1",
         /// Ventilhub zu kurz oder Batterieleistung zu schwach.
@@ -34,7 +34,7 @@ struct RadiatorRegulator: XMLMappable  {
     var batteryLow: Bool = false
     var locked: Bool?
     var lockedByDevice: Bool?
-    var error: ErrorCode = .none
+    var error: ErrorCode = .noError
     
     var nodeName: String!
     

@@ -30,8 +30,9 @@ struct Device: XMLMappable  {
     var manufacturer: String = ""
     var productName: String = ""
     var displayName: String = ""
-    var temperature = Temperature()
-    var hkr = RadiatorRegulator()
+    
+    var temperature: Temperature?
+    var hkr: RadiatorRegulator?
     
     var nodeName: String!
     
@@ -45,6 +46,7 @@ struct Device: XMLMappable  {
         manufacturer    <- map.attributes["manufacturer"]
         productName     <- map.attributes["productname"]
         displayName     <- map["name"]
+        
         temperature     <- map["temperature"]
         hkr             <- map["hkr"]
         

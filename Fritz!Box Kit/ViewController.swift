@@ -80,7 +80,7 @@ class ViewController: UITableViewController {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: "deviceCell")
         }
         
-        cell.textLabel?.text = device.displayName
+        cell.textLabel?.text = String(format: "%@ - %.2f", device.displayName, device.temperature!.celsius) // device.displayName
         cell.detailTextLabel?.text = device.identifier
         
         return cell

@@ -41,51 +41,51 @@ class MappingTests: XCTestCase {
             switch index {
             case 1:
                 XCTAssertEqual(device.displayName, "Kinderzimmer", "Display name should match.")
-                XCTAssertEqual(device.temperature.celsius, 22, "Temp. should match.")
-                XCTAssertEqual(device.temperature.offset, 0, "Temp. should match.")
+                XCTAssertEqual(device.temperature?.celsius, 22, "Temp. should match.")
+                XCTAssertEqual(device.temperature?.offset, 0, "Temp. should match.")
                 XCTAssertEqual(device.features, [.temperatureSensor, .radiatorRegulator], "Features should match")
                 
-                XCTAssertEqual(device.hkr.current, 22, "Temp. should match.")
-                XCTAssertEqual(device.hkr.target, 24, "Temp. should match.")
-                XCTAssertEqual(device.hkr.low, 16, "Temp. should match.")
-                XCTAssertEqual(device.hkr.high, 24, "Temp. should match.")
+                XCTAssertEqual(device.hkr?.current, 22, "Temp. should match.")
+                XCTAssertEqual(device.hkr?.target, 24, "Temp. should match.")
+                XCTAssertEqual(device.hkr?.low, 16, "Temp. should match.")
+                XCTAssertEqual(device.hkr?.high, 24, "Temp. should match.")
                 
-                XCTAssertEqual(device.hkr.locked, true, "Value should be true.")
-                XCTAssertEqual(device.hkr.lockedByDevice, nil, "Value should be missing")
-                XCTAssertEqual(device.hkr.error, .movementProblem, "Error code should match.")
-                XCTAssertEqual(device.hkr.batteryLow, true, "Value should match.")
+                XCTAssertEqual(device.hkr?.locked, true, "Value should be true.")
+                XCTAssertEqual(device.hkr?.lockedByDevice, nil, "Value should be missing")
+                XCTAssertEqual(device.hkr?.error, .movementProblem, "Error code should match.")
+                XCTAssertEqual(device.hkr?.batteryLow, true, "Value should match.")
                 
             case 2:
                 XCTAssertEqual(device.displayName, "Küche", "Display name should match.")
-                XCTAssertEqual(device.temperature.celsius, 23, "Temp. should match.")
-                XCTAssertEqual(device.temperature.offset, 0, "Temp. should match.")
+                XCTAssertEqual(device.temperature?.celsius, 23, "Temp. should match.")
+                XCTAssertEqual(device.temperature?.offset, 0, "Temp. should match.")
                 XCTAssertEqual(device.features, [.temperatureSensor, .radiatorRegulator], "Features should match")
                 
-                XCTAssertEqual(device.hkr.current, 23, "Temp. should match.")
-                XCTAssertEqual(device.hkr.target, 24, "Temp. should match.")
-                XCTAssertEqual(device.hkr.low, 16, "Temp. should match.")
-                XCTAssertEqual(device.hkr.high, 24, "Temp. should match.")
+                XCTAssertEqual(device.hkr?.current, 23, "Temp. should match.")
+                XCTAssertEqual(device.hkr?.target, 24, "Temp. should match.")
+                XCTAssertEqual(device.hkr?.low, 16, "Temp. should match.")
+                XCTAssertEqual(device.hkr?.high, 24, "Temp. should match.")
                 
-                XCTAssertEqual(device.hkr.locked, nil, "Value should be missing")
-                XCTAssertEqual(device.hkr.lockedByDevice, true, "Value should be true.")
-                XCTAssertEqual(device.hkr.error, .adjusting, "Error code should match.")
-                XCTAssertEqual(device.hkr.batteryLow, false, "Value should match.")
+                XCTAssertEqual(device.hkr?.locked, nil, "Value should be missing")
+                XCTAssertEqual(device.hkr?.lockedByDevice, true, "Value should be true.")
+                XCTAssertEqual(device.hkr?.error, .adjusting, "Error code should match.")
+                XCTAssertEqual(device.hkr?.batteryLow, false, "Value should match.")
                 
             default:
                 XCTAssertEqual(device.displayName, "Wohnzimmer", "Display name should match.")
-                XCTAssertEqual(device.temperature.celsius, 24.5, "Temp. should match.")
-                XCTAssertEqual(device.temperature.offset, -20, "Temp. should match.")
+                XCTAssertEqual(device.temperature?.celsius, 24.5, "Temp. should match.")
+                XCTAssertEqual(device.temperature?.offset, -20, "Temp. should match.")
                 XCTAssertEqual(device.features, [.temperatureSensor, .radiatorRegulator], "Features should match")
                 
-                XCTAssertEqual(device.hkr.current, 24.5, "Temp. should match.")
-                XCTAssertEqual(device.hkr.target, 24, "Temp. should match.")
-                XCTAssertEqual(device.hkr.low, 16, "Temp. should match.")
-                XCTAssertEqual(device.hkr.high, 24, "Temp. should match.")
+                XCTAssertEqual(device.hkr?.current, 24.5, "Temp. should match.")
+                XCTAssertEqual(device.hkr?.target, 24, "Temp. should match.")
+                XCTAssertEqual(device.hkr?.low, 16, "Temp. should match.")
+                XCTAssertEqual(device.hkr?.high, 24, "Temp. should match.")
                 
-                XCTAssertEqual(device.hkr.locked, false, "Value should be present and false.")
-                XCTAssertEqual(device.hkr.lockedByDevice, false, "Value should be present and false.")
-                XCTAssertEqual(device.hkr.error, .none, "Error code should match.")
-                XCTAssertEqual(device.hkr.batteryLow, false, "Value should match.")
+                XCTAssertEqual(device.hkr?.locked, false, "Value should be present and false.")
+                XCTAssertEqual(device.hkr?.lockedByDevice, false, "Value should be present and false.")
+                XCTAssertEqual(device.hkr?.error, .noError, "Error code should match.")
+                XCTAssertEqual(device.hkr?.batteryLow, false, "Value should match.")
             }
         }
         
