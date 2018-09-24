@@ -37,10 +37,17 @@ fritzBox.login { (info, error) in
 You can now get information about devices and then act on them.
 
 ```swift
-fritzBox.getDevices(completion: { [weak self] (devices, deviceError) in
-    if error == nil {
+fritzBox.getDevices(completion: { (devices, deviceError) in
+    if deviceError == nil {
         print("Devices: \(String(describing: devices))")
         // Prints a list of devices and their properties.
     }
 })
 ```
+
+## Hardware
+
+As I only have one home, this was only tested with the following setup.
+
+- Fritz!Box 7490 (FRITZ!OS 6.83)
+- 3x Fritz Dect 300 thermostat
