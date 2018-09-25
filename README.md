@@ -1,5 +1,8 @@
 #  Fritz!Box Kit
 
+[![CocoaPods](https://img.shields.io/cocoapods/v/FritzBox-Kit.svg)](http://cocoadocs.org/docsets/FritzBox-Kit)
+[![Travis](https://img.shields.io/travis/r-dent/FritzBoxKit.svg)](https://travis-ci.org/r-dent/FritzBoxKit)
+
 This aims to be Framework that provides a clean and modern Swift API for communicating with Fritz!Box routers. The focus is on home automation features.
 
 ## Features
@@ -51,3 +54,9 @@ As I only have one home, this was only tested with the following setup.
 
 - Fritz!Box 7490 (FRITZ!OS 6.83)
 - 3x Fritz Dect 300 thermostat
+
+## Installation
+
+If you´re using CocoaPods, add this to your Podfile: 
+
+	pod 'FritzBox-Kit'
