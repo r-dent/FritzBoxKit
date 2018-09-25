@@ -8,21 +8,25 @@
 
 import XMLMapper
 
-struct Temperature: XMLMappable  {
+extension FritzBox {
     
-    var celsius: Double = 0
-    var offset: Double = 0
-    
-    var nodeName: String!
-    
-    init() {}
-    
-    init(map: XMLMap) {
-    }
-    
-    mutating func mapping(map: XMLMap) {
-        celsius <- (map["celsius"], XMLTemperatureTransform(mode: .tenth))
-        offset <- map["offset"]
+    struct Temperature: XMLMappable  {
+        
+        var celsius: Double = 0
+        var offset: Double = 0
+        
+        var nodeName: String!
+        
+        init() {}
+        
+        init(map: XMLMap) {
+        }
+        
+        mutating func mapping(map: XMLMap) {
+            celsius <- (map["celsius"], XMLTemperatureTransform(mode: .tenth))
+            offset <- map["offset"]
+        }
+        
     }
     
 }

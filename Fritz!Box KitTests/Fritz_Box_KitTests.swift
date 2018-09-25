@@ -33,7 +33,9 @@ class MappingTests: XCTestCase {
         
         XCTAssertEqual(xml.root.children.count, 3, "Device number count should be correct")
         
-        let mappedDevices = xml.root.children.compactMap{ $0.xmlCompact }.compactMap{ Device(XMLString: $0) }
+        let mappedDevices = xml.root.children
+            .compactMap{ $0.xmlCompact }
+            .compactMap{ FritzBox.SmartHomeDevice(XMLString: $0) }
         
         XCTAssertEqual(mappedDevices.count, 3, "Mapped Device number count should be correct")
         

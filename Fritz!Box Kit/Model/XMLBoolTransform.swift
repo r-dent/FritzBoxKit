@@ -8,35 +8,39 @@
 
 import XMLMapper
 
-open class XMLBoolTransform: XMLTransformType {
-    public typealias Object = Bool
-    public typealias XML = Int
+extension FritzBox {
     
-    open func transformFromXML(_ value: Any?) -> Bool? {
-        return (value as? String).map{ $0 == "1" }
+    open class XMLBoolTransform: XMLTransformType {
+        public typealias Object = Bool
+        public typealias XML = Int
+        
+        open func transformFromXML(_ value: Any?) -> Bool? {
+            return (value as? String).map{ $0 == "1" }
+        }
+        
+        open func transformToXML(_ value: Bool?) -> Int? {
+            return value.map{ $0 ? 1 : 0 }
+        }
     }
     
-    open func transformToXML(_ value: Bool?) -> Int? {
-        return value.map{ $0 ? 1 : 0 }
-    }
 }
 
 /// Object of Raw Representable type
 public func <- (left: inout Bool, right: XMLMap) {
-    left <- (right, XMLBoolTransform())
+    left <- (right, FritzBox.XMLBoolTransform())
 }
 
 public func >>> (left: Bool, right: XMLMap) {
-    left >>> (right, XMLBoolTransform())
+    left >>> (right, FritzBox.XMLBoolTransform())
 }
 
 /// Optional bject of Raw Representable type
 public func <- (left: inout Bool?, right: XMLMap) {
-    left <- (right, XMLBoolTransform())
+    left <- (right, FritzBox.XMLBoolTransform())
 }
 
 public func >>> (left: Bool?, right: XMLMap) {
-    left >>> (right, XMLBoolTransform())
+    left >>> (right, FritzBox.XMLBoolTransform())
 }
 
 

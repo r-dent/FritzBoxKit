@@ -15,7 +15,7 @@ class DeviceListViewController: UITableViewController, Instantiatable {
     @IBOutlet weak var passwordField: UITextField!
     
     var fritzBox: FritzBox!
-    var devices: [Device] = []
+    var devices: [FritzBox.SmartHomeDevice] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

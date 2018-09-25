@@ -12,7 +12,7 @@ import AEXML
 open class FritzBox: NSObject {
     
     typealias LoginCompletionBlock = (_ session: SessionInfo?, _ error: Error?) -> ()
-    typealias DeviceListCompletionBlock = (_ devices: [Device], _ error: Error?) -> ()
+    typealias DeviceListCompletionBlock = (_ devices: [SmartHomeDevice], _ error: Error?) -> ()
     
     var host: String
     
@@ -43,11 +43,11 @@ open class FritzBox: NSObject {
         
         load(authChallenge) { (sessionInfo, result) in
             guard result.isSuccessfulOperation else {
-                completion?(nil, NSError(code: result.rawValue, reason: "Could not load challenge"))
+                completion?(nil, FRZError(code: result.rawValue, reason: "Could not load challenge"))
                 return
             }
             guard let challenge = sessionInfo?.challenge, !challenge.isEmpty else {
-                completion?(nil, NSError(reason: "Challenge not found"))
+                completion?(nil, FRZError(reason: "Challenge not found"))
                 return
             }
             self.auth(challenge, completion: completion)
@@ -59,7 +59,7 @@ open class FritzBox: NSObject {
             let name = userName,
             let url = URL(string: "\(host)/login_sid.lua")
             else {
-                completion?(nil, NSError(reason: "Name or URL missing or malformed."))
+                completion?(nil, FRZError(reason: "Name or URL missing or malformed."))
                 return
         }
         
@@ -95,7 +95,7 @@ open class FritzBox: NSObject {
             let sessionId = self.sessionId,
             let url = URL(string: "\(host)/webservices/homeautoswitch.lua")
             else {
-                completion?([], NSError(reason: "Session missing"))
+                completion?([], FRZError(reason: "Session missing"))
                 return
         }
         
@@ -103,20 +103,21 @@ open class FritzBox: NSObject {
             "sid": sessionId,
             "switchcmd": "getdevicelistinfos"
         ]
+        typealias SmartHomeDeviceResource = Resource<[SmartHomeDevice]>
         
-        let getDevices = Resource<[Device]>(
+        let getDevices = SmartHomeDeviceResource(
             url: url,
             method: .get,
             params: params,
             parse: {
                 guard let xml = try? AEXMLDocument(xml: $0) else {
-                    throw Resource<[Device]>.ParseError.mappingFailed
+                    throw SmartHomeDeviceResource.ParseError.mappingFailed
                 }
-                return xml.root.children.compactMap{ $0.xmlCompact }.compactMap{ Device(XMLString: $0) }
+                return xml.root.children.compactMap{ $0.xmlCompact }.compactMap{ SmartHomeDevice(XMLString: $0) }
         })
         
         load(getDevices) { (devices, result) in
-            completion?(devices ?? [], (result.isSuccessfulOperation ? nil : NSError(code: result.rawValue)))
+            completion?(devices ?? [], (result.isSuccessfulOperation ? nil : FRZError(code: result.rawValue)))
         }
     }
 }

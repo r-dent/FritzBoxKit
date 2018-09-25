@@ -8,10 +8,14 @@
 
 import Foundation
 
-extension NSError {
+extension FritzBox {
     
-    convenience init(domain: String = "fritzboxkit", code:Int = 0, reason: String? = nil) {
-        self.init(domain: domain, code: code, userInfo: reason.flatMap{ [NSLocalizedFailureReasonErrorKey: $0] })
+    class FRZError: NSError {
+        
+        convenience init(domain: String = "fritzboxkit", code:Int = 0, reason: String? = nil) {
+            self.init(domain: domain, code: code, userInfo: reason.flatMap{ [NSLocalizedFailureReasonErrorKey: $0] })
+        }
+        
     }
     
 }
