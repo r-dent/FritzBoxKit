@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FritzBoxKit
 
 class LoginViewController: UIViewController {
 

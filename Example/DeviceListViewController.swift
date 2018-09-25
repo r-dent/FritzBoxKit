@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AEXML
+import FritzBoxKit
 
 class DeviceListViewController: UITableViewController, Instantiatable {
     

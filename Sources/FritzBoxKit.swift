@@ -11,8 +11,8 @@ import AEXML
 
 open class FritzBox: NSObject {
     
-    typealias LoginCompletionBlock = (_ session: SessionInfo?, _ error: Error?) -> ()
-    typealias DeviceListCompletionBlock = (_ devices: [SmartHomeDevice], _ error: Error?) -> ()
+    public typealias LoginCompletionBlock = (_ session: SessionInfo?, _ error: Error?) -> ()
+    public typealias DeviceListCompletionBlock = (_ devices: [SmartHomeDevice], _ error: Error?) -> ()
     
     var host: String
     
@@ -22,7 +22,7 @@ open class FritzBox: NSObject {
     var sessionId: String?
     var sessionIdReceived: Date = .distantPast
     
-    init(host: String, user: String?, password: String) {
+    public init(host: String, user: String?, password: String) {
         self.host = host
         self.userName = user
         self.password = password
@@ -30,7 +30,7 @@ open class FritzBox: NSObject {
     
     // MARK: - Requests.
     
-    func login(completion: LoginCompletionBlock?) {
+    public func login(completion: LoginCompletionBlock?) {
         let authChallenge = Resource<SessionInfo>(
             url: URL(string: "\(host)/login_sid.lua")!,
             method: .get,
@@ -90,7 +90,7 @@ open class FritzBox: NSObject {
         }
     }
     
-    func getDevices(completion: DeviceListCompletionBlock?) {
+    public func getDevices(completion: DeviceListCompletionBlock?) {
         guard
             let sessionId = self.sessionId,
             let url = URL(string: "\(host)/webservices/homeautoswitch.lua")

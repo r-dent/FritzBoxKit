@@ -10,38 +10,42 @@ import XMLMapper
 
 extension FritzBox {
     
-    struct SmartHomeDevice: XMLMappable  {
+    public struct SmartHomeDevice: XMLMappable  {
         
-        struct Feature: OptionSet {
+        public struct Feature: OptionSet {
             
-            let rawValue: Int
+            public let rawValue: Int
             
-            static let alarmSensor          = Feature(rawValue: 1 << 4)
-            static let radiatorRegulator    = Feature(rawValue: 1 << 6)
-            static let energySensor         = Feature(rawValue: 1 << 7)
-            static let temperatureSensor    = Feature(rawValue: 1 << 8)
-            static let powerSwitch          = Feature(rawValue: 1 << 9)
-            static let dectRepeater         = Feature(rawValue: 1 << 10)
+            public init (rawValue: Int) {
+                self.rawValue = rawValue
+            }
+            
+            public static let alarmSensor          = Feature(rawValue: 1 << 4)
+            public static let radiatorRegulator    = Feature(rawValue: 1 << 6)
+            public static let energySensor         = Feature(rawValue: 1 << 7)
+            public static let temperatureSensor    = Feature(rawValue: 1 << 8)
+            public static let powerSwitch          = Feature(rawValue: 1 << 9)
+            public static let dectRepeater         = Feature(rawValue: 1 << 10)
             
         }
         
-        var firmwareVersion: String = ""
-        var id: String = ""
-        var identifier: String = ""
-        var features: Feature = []
-        var manufacturer: String = ""
-        var productName: String = ""
-        var displayName: String = ""
+        public var firmwareVersion: String = ""
+        public var id: String = ""
+        public var identifier: String = ""
+        public var features: Feature = []
+        public var manufacturer: String = ""
+        public var productName: String = ""
+        public var displayName: String = ""
         
-        var temperature: Temperature?
-        var hkr: RadiatorRegulator?
+        public var temperature: Temperature?
+        public var hkr: RadiatorRegulator?
         
-        var nodeName: String!
+        public var nodeName: String!
         
-        init(map: XMLMap) {
+        public init(map: XMLMap) {
         }
         
-        mutating func mapping(map: XMLMap) {
+        mutating public func mapping(map: XMLMap) {
             firmwareVersion <- map.attributes["fwversion"]
             id              <- map.attributes["id"]
             identifier      <- map.attributes["identifier"]

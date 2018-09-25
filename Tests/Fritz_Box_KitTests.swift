@@ -8,7 +8,7 @@
 
 import XCTest
 import AEXML
-@testable import Fritz_Box_Kit
+@testable import FritzBoxKit
 
 class MappingTests: XCTestCase {
     

@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '10.0'
+platform :ios, '9.0'
 
 inhibit_all_warnings!
 
@@ -8,7 +8,8 @@ abstract_target 'fritzboxkit' do
     pod 'AEXML'
     pod 'XMLMapper'
     
-    target 'Fritz!Box Kit'
-    target 'Fritz!Box KitTests'
+    target 'FritzBoxKit'
+    target 'Example App'
+    target 'Tests'
     
 end

@@ -10,9 +10,9 @@ import XMLMapper
 
 extension FritzBox {
     
-    struct RadiatorRegulator: XMLMappable  {
+    public struct RadiatorRegulator: XMLMappable  {
         
-        enum ErrorCode: String {
+        public enum ErrorCode: String {
             case
             noError                 = "0",
             /// Keine Adaptierung möglich. Gerät korrekt am Heizkörper montiert?
@@ -28,24 +28,24 @@ extension FritzBox {
             adjusting               = "6"
         }
         
-        var target: Double = 0
-        var current: Double = 0
-        var high: Double = 0
-        var low: Double = 0
+        public var target: Double = 0
+        public var current: Double = 0
+        public var high: Double = 0
+        public var low: Double = 0
         
-        var batteryLow: Bool = false
-        var locked: Bool?
-        var lockedByDevice: Bool?
-        var error: ErrorCode = .noError
+        public var batteryLow: Bool = false
+        public var locked: Bool?
+        public var lockedByDevice: Bool?
+        public var error: ErrorCode = .noError
         
-        var nodeName: String!
+        public var nodeName: String!
         
         init() {}
         
-        init(map: XMLMap) {
+        public init(map: XMLMap) {
         }
         
-        mutating func mapping(map: XMLMap) {
+        mutating public func mapping(map: XMLMap) {
             target          <- (map["tsoll"], XMLTemperatureTransform(mode: .half))
             current         <- (map["tist"], XMLTemperatureTransform(mode: .half))
             high            <- (map["komfort"], XMLTemperatureTransform(mode: .half))
