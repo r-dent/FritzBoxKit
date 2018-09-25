@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CommonCrypto
 
 func md5(data: Data) -> String {
     var digestData = Data(count: Int(CC_MD5_DIGEST_LENGTH))
