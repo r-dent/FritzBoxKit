@@ -1,0 +1,8 @@
+language: objective-c
+
+osx_image: xcode9
+xcode_workspace: "Fritz!Box Kit.xcodeproj"
+xcode_scheme: Tests
+xcode_sdk: iphonesimulator11.0
+
+script: xcodebuild build test -project "Fritz!Box Kit.xcodeproj" -scheme Tests -destination "platform=iOS Simulator,name=iPhone 6" -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
