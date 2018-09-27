@@ -31,20 +31,22 @@ class MappingTests: XCTestCase {
         guard let xml = try? AEXMLDocument(xml: xmlData)
             else { XCTFail("No XML data"); return }
         
-        XCTAssertEqual(xml.root.children.count, 3, "Device number count should be correct")
+        XCTAssertEqual(xml.root.children.count, 4, "Device number count should be correct")
         
         let mappedDevices = xml.root.children
             .compactMap{ $0.xmlCompact }
             .compactMap{ FritzBox.SmartHomeDevice(XMLString: $0) }
         
-        XCTAssertEqual(mappedDevices.count, 3, "Mapped Device number count should be correct")
+        XCTAssertEqual(mappedDevices.count, xml.root.children.count, "Mapped Device number count should match")
         
         for (index, device) in mappedDevices.enumerated() {
             
-            XCTAssertEqual(device.temperature?.celsius, device.hkr?.current, "Measured temperatures schould match")
+            if let radiatorRegulator = device.hkr {
+                XCTAssertEqual(device.temperature?.celsius, radiatorRegulator.current, "Measured temperatures schould match")
+            }
             
             switch index {
-            case 1:
+            case 1: // Radiator regulator.
                 XCTAssertEqual(device.displayName, "Kinderzimmer", "Display name should match.")
                 XCTAssertEqual(device.temperature?.celsius, 22, "Temp. should match.")
                 XCTAssertEqual(device.temperature?.offset, 0, "Temp. should match.")
@@ -60,7 +62,7 @@ class MappingTests: XCTestCase {
                 XCTAssertEqual(device.hkr?.error, .movementProblem, "Error code should match.")
                 XCTAssertEqual(device.hkr?.batteryLow, true, "Value should match.")
                 
-            case 2:
+            case 2: // Radiator regulator.
                 XCTAssertEqual(device.displayName, "Küche", "Display name should match.")
                 XCTAssertEqual(device.temperature?.celsius, 23, "Temp. should match.")
                 XCTAssertEqual(device.temperature?.offset, 0, "Temp. should match.")
@@ -76,7 +78,20 @@ class MappingTests: XCTestCase {
                 XCTAssertEqual(device.hkr?.error, .adjusting, "Error code should match.")
                 XCTAssertEqual(device.hkr?.batteryLow, false, "Value should match.")
                 
-            default:
+            case 3: // Power switch.
+                XCTAssertEqual(device.productName, "FRITZ!DECT 200", "Product name should match.")
+                XCTAssertEqual(device.displayName, "Steckdose", "Display name should match.")
+                XCTAssertEqual(device.features, [.temperatureSensor, .powerSwitch, .energySensor], "Features should match")
+                
+                XCTAssertEqual(device.temperature?.celsius, 28.5, "Temp. should match.")
+                XCTAssertEqual(device.temperature?.offset, 0, "Offset should match.")
+                
+                XCTAssertEqual(device.powerSwitch?.state, true, "State should match.")
+                XCTAssertEqual(device.powerSwitch?.mode, FritzBox.PowerSwitch.Mode.auto, "Mode should be auto.")
+                XCTAssertEqual(device.powerSwitch?.lockedBySoftware, false, "Value should be present and false.")
+                XCTAssertEqual(device.powerSwitch?.lockedByDevice, true, "Should be true.")
+                
+            default: // First element in the list.
                 XCTAssertEqual(device.displayName, "Wohnzimmer", "Display name should match.")
                 XCTAssertEqual(device.temperature?.celsius, 24.5, "Temp. should match.")
                 XCTAssertEqual(device.temperature?.offset, -20, "Temp. should match.")

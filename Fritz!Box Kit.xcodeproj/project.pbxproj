@@ -25,6 +25,7 @@
 		3029904B215A3EBA00A29EF9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300D2F4C1FF4E14200D6A473 /* Helper.swift */; };
 		3029904D215A418F00A29EF9 /* libFritzBoxKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3029903B215A3E8F00A29EF9 /* libFritzBoxKit.a */; };
 		3079743320163E9600D65712 /* devices.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3079743220163E9600D65712 /* devices.xml */; };
+		30865F72215CFFF100801C80 /* PowerSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30865F71215CFFF100801C80 /* PowerSwitch.swift */; };
 		30D1E8FD2158EB2000BEC592 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1E8FC2158EB1F00BEC592 /* LoginViewController.swift */; };
 		30D1E8FF2158F53200BEC592 /* Instantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1E8FE2158F53200BEC592 /* Instantiatable.swift */; };
 		7BB70D685962E9843488DC2E /* libPods-fritzboxkit-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B88FE428FA7C29BE1CDABAE /* libPods-fritzboxkit-Tests.a */; };
@@ -78,6 +79,7 @@
 		3079742E2015ED4400D65712 /* XMLTemperatureTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLTemperatureTransform.swift; sourceTree = "<group>"; };
 		3079743220163E9600D65712 /* devices.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = devices.xml; sourceTree = "<group>"; };
 		3079743420166DFB00D65712 /* XMLBoolTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLBoolTransform.swift; sourceTree = "<group>"; };
+		30865F71215CFFF100801C80 /* PowerSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerSwitch.swift; sourceTree = "<group>"; };
 		30D1E8FC2158EB1F00BEC592 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		30D1E8FE2158F53200BEC592 /* Instantiatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instantiatable.swift; sourceTree = "<group>"; };
 		58916D8A7751C554E45A5031 /* Pods-fritzboxkit-Example App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-Example App.release.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-Example App/Pods-fritzboxkit-Example App.release.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				307974282015ECDC00D65712 /* RadiatorRegulator.swift */,
 				300D2F491FF4DD8B00D6A473 /* SessionInfo.swift */,
+				30865F71215CFFF100801C80 /* PowerSwitch.swift */,
 				304C4FDB1FFAA7560059B9E9 /* SmartHomeDevice.swift */,
 				3079742B2015ED1800D65712 /* Temperature.swift */,
 				3079743420166DFB00D65712 /* XMLBoolTransform.swift */,
@@ -430,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3029904B215A3EBA00A29EF9 /* Helper.swift in Sources */,
+				30865F72215CFFF100801C80 /* PowerSwitch.swift in Sources */,
 				30299046215A3EB400A29EF9 /* XMLBoolTransform.swift in Sources */,
 				3029904A215A3EBA00A29EF9 /* FRZError.swift in Sources */,
 				30299044215A3EB400A29EF9 /* SmartHomeDevice.swift in Sources */,

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'FritzBox-Kit'
-  s.version      = '0.3.0'
+  s.version      = '0.3.1'
 
   s.summary      = 'Swift SDK for communicating with Fritz! smart home devices.'
   s.author       = { 'Roman Gille' => 'developer@romangille.com' }

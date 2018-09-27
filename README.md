@@ -8,7 +8,7 @@ This aims to be Framework that provides a clean and modern Swift API for communi
 ## Features
 
 - [x] Authentication with API
-- [x] Load device information (currently limited to thermostats)
+- [x] Load device information (currently limited to thermostats and switches)
 - [ ] Set Thermostat temperature
 - [ ] Toggle switches
 - [ ] Load thermostat timetable
