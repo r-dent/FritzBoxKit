@@ -30,6 +30,10 @@ open class FritzBox: NSObject {
     
     // MARK: - Requests.
     
+    /// Authenticate with the Fritz!Box device.
+    /// URL and user credentials are used from the initialization values.
+    ///
+    /// - Parameter completion: A block to handle the result/errors of the request.
     public func login(completion: LoginCompletionBlock?) {
         let authChallenge = Resource<SessionInfo>(
             url: URL(string: "\(host)/login_sid.lua")!,
@@ -90,6 +94,10 @@ open class FritzBox: NSObject {
         }
     }
     
+    
+    /// Load a list of all available smart home devices.
+    ///
+    /// - Parameter completion: A block to handle the result of the request.
     public func getDevices(completion: DeviceListCompletionBlock?) {
         guard
             let sessionId = self.sessionId,
