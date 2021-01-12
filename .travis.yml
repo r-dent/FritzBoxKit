@@ -1,8 +1,8 @@
-language: objective-c
-
-osx_image: xcode10
-xcode_workspace: "Fritz!Box Kit.xcworkspace"
-xcode_scheme: Example App
-xcode_sdk: iphonesimulator11.0
-
-script: xcodebuild build test -workspace "Fritz!Box Kit.xcworkspace" -scheme "Example App" -destination "platform=iOS Simulator,name=iPhone 7" -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+os:
+  - osx
+language: swift
+osx_image: xcode12
+install: swift package update
+script:
+  - swift build
+  - swift test
