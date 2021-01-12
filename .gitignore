@@ -3,3 +3,5 @@
 .DS_Store
 *xcuserdatad*
 /Fritz\!Box Kit/.DS_Store
+/.build
+/.swiftpm

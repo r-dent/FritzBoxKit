@@ -16,10 +16,16 @@ class MappingTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
+
+        #if SWIFT_PACKAGE
+        if let path = Bundle.module.path(forResource: "devices", ofType: "xml") {
+            xmlData = try? Data(contentsOf: URL(fileURLWithPath: path))
+        }
+        #else
         if let path = Bundle(for: MappingTests.self).path(forResource: "devices", ofType: "xml") {
             xmlData = try? Data(contentsOf: URL(fileURLWithPath: path))
         }
+        #endif
     }
     
     override func tearDown() {

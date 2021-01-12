@@ -31,10 +31,14 @@ import CommonCrypto
 
 func md5(data: Data) -> String {
     var digestData = Data(count: Int(CC_MD5_DIGEST_LENGTH))
-    
-    _ = digestData.withUnsafeMutableBytes {digestBytes in
-        data.withUnsafeBytes {bytes in
-            CC_MD5(bytes, CC_LONG(data.count), digestBytes)
+
+    _ = digestData.withUnsafeMutableBytes { digestBytes -> UInt8 in
+        data.withUnsafeBytes { messageBytes -> UInt8 in
+            if let messageBytesBaseAddress = messageBytes.baseAddress, let digestBytesBlindMemory = digestBytes.bindMemory(to: UInt8.self).baseAddress {
+                let messageLength = CC_LONG(data.count)
+                CC_MD5(messageBytesBaseAddress, messageLength, digestBytesBlindMemory)
+            }
+            return 0
         }
     }
     
