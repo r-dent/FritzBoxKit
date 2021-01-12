@@ -1,6 +1,8 @@
 #  Fritz!Box Kit
 
 [![CocoaPods](https://img.shields.io/cocoapods/v/FritzBox-Kit.svg)](http://cocoadocs.org/docsets/FritzBox-Kit)
+[![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
+[![License MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg?style=flat)](https://github.com/r-dent/FritzBoxKit/blob/master/LICENSE)
 [![Travis](https://img.shields.io/travis/r-dent/FritzBoxKit.svg)](https://travis-ci.org/r-dent/FritzBoxKit)
 
 This aims to be Framework that provides a clean and modern Swift API for communicating with Fritz!Box routers. The focus is on home automation features.
@@ -57,6 +59,10 @@ As I only have one home, this was only tested with the following setup.
 
 ## Installation
 
-If you´re using CocoaPods, add this to your Podfile: 
+When using [Swift Package Manager](https://swift.org/package-manager/) add this:
+
+    .package(url: "https://github.com/r-dent/FritzBoxKit.git", from: "0.3.2")
+
+If you´re using [CocoaPods](https://cocoapods.org/pods/FritzBox-Kit), add this to your Podfile: 
 
 	pod 'FritzBox-Kit'

@@ -24,7 +24,7 @@ let package = Package(
         ),
         .testTarget(
             name: "FritzBoxKitTests",
-            dependencies: ["FritzBoxKit"],
+            dependencies: ["FritzBoxKit", "AEXML"],
             path: "Tests",
             exclude: ["Info.plist"],
             resources: [.process("TestResources")]
