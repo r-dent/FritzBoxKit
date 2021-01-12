@@ -66,10 +66,10 @@ extension FritzBox {
         }
         
         mutating public func mapping(map: XMLMap) {
-            target          <- (map["tsoll"], XMLTemperatureTransform(mode: .half))
-            current         <- (map["tist"], XMLTemperatureTransform(mode: .half))
-            high            <- (map["komfort"], XMLTemperatureTransform(mode: .half))
-            low             <- (map["absenk"], XMLTemperatureTransform(mode: .half))
+            target          <- (map["tsoll"], XMLFloatTransform(mode: .temperature))
+            current         <- (map["tist"], XMLFloatTransform(mode: .temperature))
+            high            <- (map["komfort"], XMLFloatTransform(mode: .temperature))
+            low             <- (map["absenk"], XMLFloatTransform(mode: .temperature))
             batteryLow      <- map["batterylow"]
             locked          <- map["lock"]
             lockedByDevice  <- map["devicelock"]

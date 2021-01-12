@@ -60,6 +60,7 @@ extension FritzBox {
         public var temperature: Temperature?
         public var hkr: RadiatorRegulator?
         public var powerSwitch: PowerSwitch?
+        public var powerMeter: PowerMeter?
         
         public var nodeName: String!
         
@@ -77,6 +78,7 @@ extension FritzBox {
             temperature     <- map["temperature"]
             hkr             <- map["hkr"]
             powerSwitch     <- map["switch"]
+            powerMeter      <- map["powermeter"]
             
             let featureTransform = XMLTransformOf<Feature, String>(fromXML: { (value) -> Feature? in
                 return value.flatMap{ Int($0) }.flatMap{ Feature(rawValue: $0) }

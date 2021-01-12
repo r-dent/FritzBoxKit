@@ -1,8 +1,8 @@
-//
-//  Temperature.swift
+////
+//  PowerMeter.swift
 //  Fritz!Box Kit
 //
-//  Created by Roman Gille on 22.01.18.
+//  Created by Roman Gille on 08.10.18.
 //
 //  Copyright (c) 2018 Roman Gille, http://romangille.com
 //
@@ -30,12 +30,16 @@ import XMLMapper
 
 extension FritzBox {
     
-    public struct Temperature: XMLMappable  {
+    public struct PowerMeter: XMLMappable  {
         
-        public var celsius: Double = 0
-        public var offset: Double = 0
+        /// Current power in Watts.
+        public var currentPower: Double = 0
+        /// Absolute consumption since activation in Wh.
+        public var energy: Double = 0
+        /// Current voltage in volts.
+        public var currentVoltage: Double = 0
         
-        public var nodeName: String!
+        public var nodeName: String! = "powermeter"
         
         init() {}
         
@@ -43,10 +47,12 @@ extension FritzBox {
         }
         
         mutating public func mapping(map: XMLMap) {
-            celsius <- (map["celsius"], XMLFloatTransform(mode: .tenth))
-            offset <- map["offset"]
+            currentPower    <- (map["power"], XMLFloatTransform(mode: .thousand))
+            energy          <- (map["energy"], XMLFloatTransform(mode: .thousand))
+            currentVoltage  <- (map["voltage"], XMLFloatTransform(mode: .thousand))
         }
         
     }
     
 }
+

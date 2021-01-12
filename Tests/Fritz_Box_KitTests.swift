@@ -90,6 +90,9 @@ class MappingTests: XCTestCase {
                 XCTAssertEqual(device.powerSwitch?.mode, FritzBox.PowerSwitch.Mode.auto, "Mode should be auto.")
                 XCTAssertEqual(device.powerSwitch?.lockedBySoftware, false, "Value should be present and false.")
                 XCTAssertEqual(device.powerSwitch?.lockedByDevice, true, "Should be true.")
+
+                XCTAssertNotNil(device.powerMeter, "Powermeter should exist")
+                XCTAssertEqual(device.powerMeter?.energy, 5.419, "Energy should match")
                 
             default: // First element in the list.
                 XCTAssertEqual(device.displayName, "Wohnzimmer", "Display name should match.")

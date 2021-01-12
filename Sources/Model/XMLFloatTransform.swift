@@ -1,5 +1,5 @@
 //
-//  XMLTemperatureTransform.swift
+//  XMLFloatTransform.swift
 //  Fritz!Box Kit
 //
 //  Created by Roman Gille on 22.01.18.
@@ -26,18 +26,26 @@
 //  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+import Foundation
 import XMLMapper
 
 extension FritzBox {
     
-    open class XMLTemperatureTransform: XMLTransformType {
+    open class XMLFloatTransform: XMLTransformType {
         public typealias Object = Double
         public typealias XML = Int
         
+        /// Defines in which way the Integer value is mapped to Double.
         enum Mode {
             case
+            /// Devides the Integer value by 10.
             tenth,
-            half
+            /// Devides the Integer value by 1000.
+            thousand,
+            /// Uses following definition for mapping (See AHA-HTTP-Interface.pdf):
+            /// Wertebereich: 0x10 – 0x38
+            /// 16 – 56 (8 bis 28°C), 16 <= 8°C, 17 = 8,5°C...... 56 >= 28°C, 254 = ON , 253 = OFF
+            temperature
         }
         
         let mode: Mode
@@ -51,14 +59,19 @@ extension FritzBox {
                 return nil
             }
             
-            if mode == .tenth {
+            switch mode {
+            case .tenth:
                 return Double(intValue) / 10.0
-            }
-            else {
+                
+            case .thousand:
+                return Double(intValue) / 1000.0
+                
+            case .temperature:
                 if intValue == 254 { return Double.greatestFiniteMagnitude } // On.
                 if intValue == 253 { return 0 } // Off.
                 let halfValue = Double(intValue) / 2.0
                 return min(max(halfValue, 8), 28) // Limit values to a range between 8 and 28° C.
+                
             }
         }
         
@@ -66,7 +79,19 @@ extension FritzBox {
             guard let val = value else {
                 return nil
             }
-            return Int(round(val * 10))
+            switch mode {
+            case .tenth:
+                return Int(round(val * 10))
+                
+            case .thousand:
+                return Int(round(val * 1000))
+                
+            case .temperature:
+                if val == Double.greatestFiniteMagnitude { return 254 } // On.
+                if val == 0 { return 253 } // Off.
+                let x2Value = min(max(val, 8), 28) * 2 // Limit values to a range between 8 and 28° C.
+                return Int(round(x2Value)) 
+            }
         }
     }
     
