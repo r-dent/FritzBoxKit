@@ -1,0 +1,57 @@
+<devicelist version="1">
+	<device identifier="08776 123456789" id="17" functionbitmask="896" fwversion="03.36" manufacturer="AVM" productname="FRITZ!DECT 200">
+		<present>1</present>
+		<name>Portable</name>
+		<switch>
+			<state>0</state>
+			<mode>manuell</mode>
+			<lock>0</lock>
+		</switch>
+		<powermeter>
+			<power>0</power>
+			<energy>7692</energy>
+		</powermeter>
+		<temperature>
+			<celsius>236</celsius>
+			<offset>0</offset>
+		</temperature>
+	</device>
+	<device identifier="08777 123456789" id="18" functionbitmask="896" fwversion="03.36" manufacturer="AVM" productname="FRITZ!DECT 200">
+		<present>1</present>
+		<name>Flur</name>
+		<switch>
+			<state>0</state>
+			<mode>manuell</mode>
+			<lock>0</lock>
+		</switch>
+		<powermeter>
+			<power>0</power>
+			<energy>5419</energy>
+		</powermeter>
+		<temperature>
+			<celsius>236</celsius>
+			<offset>0</offset>
+		</temperature>
+	</device>
+	<device identifier="08761 1048079" id="16" functionbitmask="1280" fwversion="03.33" manufacturer="AVM" productname="FRITZ!DECT Repeater 100">
+		<present>1</present>
+		<name>FRITZ!DECT Rep 100 #1</name>
+		<temperature>
+			<celsius>288</celsius>
+			<offset>0</offset>
+		</temperature>
+	</device>
+	<group identifier="65:3A:18-900" id="900" functionbitmask="512" fwversion="1.0" manufacturer="AVM" productname="">
+		<present>1</present>
+		<name>Gruppe</name>
+		<switch>
+			<state>1</state>
+			<mode>auto</mode>
+			<lock />
+		</switch>
+		<groupinfo>
+			<masterdeviceid>0</masterdeviceid>
+			<members>17</members>
+		</groupinfo>
+	</group>
+</devicelist>
