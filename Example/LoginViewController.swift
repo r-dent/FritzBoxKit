@@ -50,18 +50,20 @@ class LoginViewController: UIViewController {
             password: password
         )
         
-        fritzBox.login { [weak self] (info, error) in
+        fritzBox.login { [weak self] result in
             DispatchQueue.main.async {
                 self?.blockerView.isHidden = true
             }
-            
-            if let error = error {
-                print("Error: \(error)")
-            }
-            else {
+
+            switch result {
+
+            case .success(let info):
                 self?.rememberValues(url: url, username: name, password: password)
                 print("Info: \(String(describing: info))")
                 self?.showDevices(of: fritzBox)
+
+            case .failure(let error):
+                print("Error: \(error)")
             }
         }
     }

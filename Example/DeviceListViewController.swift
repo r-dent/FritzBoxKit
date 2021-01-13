@@ -33,20 +33,23 @@ class DeviceListViewController: UITableViewController, Instantiatable {
     }
     
     @objc func loadDevices() {
-        fritzBox.getDevices(completion: { [weak self] (devices, deviceError) in
-            if let error = deviceError {
-                print("Device Error: \(error)")
-                self?.refreshControl?.endRefreshing()
-            }
-            else {
+        fritzBox.getDevices(completion: { [weak self] result in
+
+            switch result {
+
+            case .success(let devices):
                 print("Info: \(String(describing: devices))")
-                
+
                 self?.devices = devices
-                
+
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
                     self?.refreshControl?.endRefreshing()
                 }
+
+            case .failure(let error):
+                print("Device Error: \(error)")
+                self?.refreshControl?.endRefreshing()
             }
         })
     }

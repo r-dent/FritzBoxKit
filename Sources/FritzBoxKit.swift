@@ -31,8 +31,8 @@ import AEXML
 
 open class FritzBox: NSObject {
     
-    public typealias LoginCompletionBlock = (_ session: SessionInfo?, _ error: Error?) -> ()
-    public typealias DeviceListCompletionBlock = (_ devices: [SmartHomeDevice], _ error: Error?) -> ()
+    public typealias LoginCompletionBlock = (Result<SessionInfo, Error>) -> ()
+    public typealias DeviceListCompletionBlock = (Result<[SmartHomeDevice], Error>) -> ()
     
     var host: String
     
@@ -54,7 +54,7 @@ open class FritzBox: NSObject {
     /// URL and user credentials are used from the initialization values.
     ///
     /// - Parameter completion: A block to handle the result/errors of the request.
-    public func login(completion: LoginCompletionBlock?) {
+    public func login(completion: @escaping LoginCompletionBlock) {
         let authChallenge = Resource<SessionInfo>(
             url: URL(string: "\(host)/login_sid.lua")!,
             method: .get,
@@ -65,26 +65,23 @@ open class FritzBox: NSObject {
                 return sessionInfo
         })
         
-        load(authChallenge) { (sessionInfo, result) in
-            guard result.isSuccessfulOperation else {
-                completion?(nil, FRZError(code: result.rawValue, reason: "Could not load challenge"))
+        load(authChallenge) { result in
+
+            guard case .success(let sessionInfo) = result, !sessionInfo.challenge.isEmpty else {
+                completion(result)
                 return
             }
-            guard let challenge = sessionInfo?.challenge, !challenge.isEmpty else {
-                completion?(nil, FRZError(reason: "Challenge not found"))
-                return
-            }
-            self.auth(challenge, completion: completion)
+            self.auth(sessionInfo.challenge, completion: completion)
         }
     }
     
-    func auth(_ challenge: String, completion: LoginCompletionBlock?) {
+    private func auth(_ challenge: String, completion: @escaping LoginCompletionBlock) {
         guard
             let name = userName,
             let url = URL(string: "\(host)/login_sid.lua")
-            else {
-                completion?(nil, FRZError(reason: "Name or URL missing or malformed."))
-                return
+        else {
+            completion(.failure(FRZError(reason: "Name or URL missing or malformed.")))
+            return
         }
         
         let secret = md5(data: "\(challenge)-\(password)".data(using:.utf16LittleEndian)!)
@@ -105,12 +102,14 @@ open class FritzBox: NSObject {
                 return sessionInfo
         })
         
-        load(authentication) { (sessionInfo, result) in
-            // Save session ID for later use.
-            self.sessionId = sessionInfo?.sid
-            self.sessionIdReceived = Date()
-            
-            completion?(sessionInfo, nil)
+        load(authentication) { result in
+
+            if case .success(let sessionInfo) = result {
+                // Save session ID for later use.
+                self.sessionId = sessionInfo.sid
+                self.sessionIdReceived = Date()
+            }
+            completion(result)
         }
     }
     
@@ -118,13 +117,13 @@ open class FritzBox: NSObject {
     /// Load a list of all available smart home devices.
     ///
     /// - Parameter completion: A block to handle the result of the request.
-    public func getDevices(completion: DeviceListCompletionBlock?) {
+    public func getDevices(completion: @escaping DeviceListCompletionBlock) {
         guard
             let sessionId = self.sessionId,
             let url = URL(string: "\(host)/webservices/homeautoswitch.lua")
-            else {
-                completion?([], FRZError(reason: "Session missing"))
-                return
+        else {
+            completion(.failure(FRZError(reason: "Session missing")))
+            return
         }
         
         let params: Parameters = [
@@ -144,9 +143,7 @@ open class FritzBox: NSObject {
                 return xml.root.children.compactMap{ $0.xmlCompact }.compactMap{ SmartHomeDevice(XMLString: $0) }
         })
         
-        load(getDevices) { (devices, result) in
-            completion?(devices ?? [], (result.isSuccessfulOperation ? nil : FRZError(code: result.rawValue)))
-        }
+        load(getDevices, completion: completion)
     }
 }
 

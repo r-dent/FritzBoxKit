@@ -48,7 +48,7 @@ extension FritzBox {
     /// A dictionary of parameters to apply to a `URLRequest`.
     public typealias Parameters = [String: Any]
     
-    enum Result: Int {
+    enum HTTPStatus: Int, Error {
         case
         noConnection    = 0,
         succeeded       = 200,
@@ -89,7 +89,7 @@ extension FritzBox {
     }
     
     @discardableResult
-    func load<A>(_ resource: Resource<A>, completion: @escaping (A?, Result) -> Void) -> URLSessionTask? {
+    func load<A>(_ resource: Resource<A>, completion: @escaping (Result<A, Error>) -> Void) -> URLSessionTask? {
         var urlComponents = URLComponents(url: resource.url, resolvingAgainstBaseURL: false)
         urlComponents?.queryItems = resource.params.flatMap{
             $0.compactMap{
@@ -98,7 +98,7 @@ extension FritzBox {
         }
         
         guard let url = urlComponents?.url else {
-            completion(nil, .badRequest)
+            completion(.failure(FRZError(code: HTTPStatus.badRequest.rawValue)))
             return nil
         }
         
@@ -106,17 +106,26 @@ extension FritzBox {
         request.httpMethod = resource.method.rawValue
         
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
-        
+
         let task = session.dataTask(with: request) { (data, response, error) in
             let httpResponse = response as? HTTPURLResponse
-            let result: Result = httpResponse.flatMap{ Result(rawValue: $0.statusCode) } ?? .unknownError
-            
-            guard let data = data, let xmlString = String(data: data, encoding: .utf8) else {
-                completion(nil, result)
+            let result: HTTPStatus = httpResponse.flatMap{ HTTPStatus(rawValue: $0.statusCode) } ?? .unknownError
+
+            guard result.isSuccessfulOperation else {
+                completion(.failure(FRZError(code: result.rawValue, reason: "Loading Error")))
                 return
             }
             
-            completion(try? resource.parse(xmlString), result)
+            guard let data = data, let xmlString = String(data: data, encoding: .utf8) else {
+                completion(.failure(FRZError(code: result.rawValue, reason: "XML parsing error")))
+                return
+            }
+
+            guard let parsed = try? resource.parse(xmlString) as A else {
+                completion(.failure(FRZError(code: result.rawValue, reason: "Resource parsing error")))
+                return
+            }
+            completion(.success(parsed))
         }
         task.resume()
         return task
