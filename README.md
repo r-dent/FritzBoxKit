@@ -31,8 +31,8 @@ let fritzBox = FritzBox(
 Get a session identifier by calling the `login` method. This will be used for all further requests.
 
 ```swift
-fritzBox.login { (info, error) in
-    if error == nil {
+fritzBox.login { result in
+    if case .success(let info) = result {
         print("Info: \(String(describing: info))")
         // We are now ready to do further requests.
     }
@@ -42,8 +42,8 @@ fritzBox.login { (info, error) in
 You can now get information about devices and then act on them.
 
 ```swift
-fritzBox.getDevices(completion: { (devices, deviceError) in
-    if deviceError == nil {
+fritzBox.getDevices(completion: { result in
+    if case .success(let devices) = result {
         print("Devices: \(String(describing: devices))")
         // Prints a list of devices and their properties.
     }
