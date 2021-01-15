@@ -48,7 +48,7 @@ extension FritzBox {
     /// A dictionary of parameters to apply to a `URLRequest`.
     public typealias Parameters = [String: Any]
     
-    enum HTTPStatus: Int, Error {
+    enum HTTPStatus: Int {
         case
         noConnection    = 0,
         succeeded       = 200,
@@ -98,7 +98,7 @@ extension FritzBox {
         }
         
         guard let url = urlComponents?.url else {
-            completion(.failure(FRZError(code: HTTPStatus.badRequest.rawValue)))
+            completion(.failure(RequestError.invalidResource))
             return nil
         }
         
@@ -112,20 +112,20 @@ extension FritzBox {
             let result: HTTPStatus = httpResponse.flatMap{ HTTPStatus(rawValue: $0.statusCode) } ?? .unknownError
 
             guard result.isSuccessfulOperation else {
-                completion(.failure(FRZError(code: result.rawValue, reason: "Loading Error")))
+                completion(.failure(RequestError.invalidHTTPStatus(result.rawValue)))
                 return
             }
             
             guard let data = data, let xmlString = String(data: data, encoding: .utf8) else {
-                completion(.failure(FRZError(code: result.rawValue, reason: "XML parsing error")))
+                completion(.failure(RequestError.stringDecoding))
                 return
             }
 
-            guard let parsed = try? resource.parse(xmlString) as A else {
-                completion(.failure(FRZError(code: result.rawValue, reason: "Resource parsing error")))
-                return
+            do {
+                completion(.success(try resource.parse(xmlString)))
+            } catch (let error) {
+                completion(.failure(error))
             }
-            completion(.success(parsed))
         }
         task.resume()
         return task

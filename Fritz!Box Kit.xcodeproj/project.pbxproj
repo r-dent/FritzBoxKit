@@ -25,7 +25,7 @@
 		306C873925AE4C2C00A9F9CD /* PowerSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C871C25AE496A00A9F9CD /* PowerSwitch.swift */; };
 		306C873A25AE4C2C00A9F9CD /* FritzBoxKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C871725AE496A00A9F9CD /* FritzBoxKit.swift */; };
 		306C873B25AE4C2C00A9F9CD /* FritzBoxKit+ResourceLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C871825AE496A00A9F9CD /* FritzBoxKit+ResourceLoading.swift */; };
-		306C873C25AE4C2C00A9F9CD /* FRZError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C871525AE496A00A9F9CD /* FRZError.swift */; };
+		306C873C25AE4C2C00A9F9CD /* FritzBox.Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C871525AE496A00A9F9CD /* FritzBox.Error.swift */; };
 		3079743320163E9600D65712 /* devices.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3079743220163E9600D65712 /* devices.xml */; };
 		30D1E8FD2158EB2000BEC592 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1E8FC2158EB1F00BEC592 /* LoginViewController.swift */; };
 		30D1E8FF2158F53200BEC592 /* Instantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1E8FE2158F53200BEC592 /* Instantiatable.swift */; };
@@ -69,7 +69,7 @@
 		3019E31C1FF184C6009AE220 /* Fritz_Box_KitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fritz_Box_KitTests.swift; sourceTree = "<group>"; };
 		3019E31E1FF184C6009AE220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3029903B215A3E8F00A29EF9 /* libFritzBoxKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFritzBoxKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		306C871525AE496A00A9F9CD /* FRZError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRZError.swift; sourceTree = "<group>"; };
+		306C871525AE496A00A9F9CD /* FritzBox.Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FritzBox.Error.swift; sourceTree = "<group>"; };
 		306C871625AE496A00A9F9CD /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		306C871725AE496A00A9F9CD /* FritzBoxKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FritzBoxKit.swift; sourceTree = "<group>"; };
 		306C871825AE496A00A9F9CD /* FritzBoxKit+ResourceLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FritzBoxKit+ResourceLoading.swift"; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 				306C871925AE496A00A9F9CD /* Model */,
 				306C871725AE496A00A9F9CD /* FritzBoxKit.swift */,
 				306C871825AE496A00A9F9CD /* FritzBoxKit+ResourceLoading.swift */,
-				306C871525AE496A00A9F9CD /* FRZError.swift */,
+				306C871525AE496A00A9F9CD /* FritzBox.Error.swift */,
 				306C871625AE496A00A9F9CD /* Helper.swift */,
 			);
 			path = Sources;
@@ -440,7 +440,7 @@
 				306C873625AE4C2C00A9F9CD /* XMLFloatTransform.swift in Sources */,
 				306C873325AE4C2C00A9F9CD /* SmartHomeDevice.swift in Sources */,
 				306C873925AE4C2C00A9F9CD /* PowerSwitch.swift in Sources */,
-				306C873C25AE4C2C00A9F9CD /* FRZError.swift in Sources */,
+				306C873C25AE4C2C00A9F9CD /* FritzBox.Error.swift in Sources */,
 				306C873225AE4C2C00A9F9CD /* Temperature.swift in Sources */,
 				306C873A25AE4C2C00A9F9CD /* FritzBoxKit.swift in Sources */,
 				306C873B25AE4C2C00A9F9CD /* FritzBoxKit+ResourceLoading.swift in Sources */,

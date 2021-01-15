@@ -1,5 +1,5 @@
 //
-//  Error+Ext.swift
+//  FritzBox.Error.swift
 //  dlh
 //
 //  Created by Roman Gille on 27.11.17.
@@ -28,14 +28,22 @@
 
 import Foundation
 
-extension FritzBox {
-    
-    class FRZError: NSError {
-        
-        convenience init(domain: String = "fritzboxkit", code:Int = 0, reason: String? = nil) {
-            self.init(domain: domain, code: code, userInfo: reason.flatMap{ [NSLocalizedFailureReasonErrorKey: $0] })
-        }
-        
+public extension FritzBox {
+
+    enum AuthError: Error {
+        /// Login credentials are invalid or malformed.
+        case invalidCredendials
+        /// No session available. Login required.
+        case sessionMissing
+    }
+
+    enum RequestError: Error {
+        /// Resource to load is not configured correctly.
+        case invalidResource
+        /// HTTP status was outside 200..299 range.
+        case invalidHTTPStatus(Int)
+        /// Contents could not be decoded to as String.
+        case stringDecoding
     }
     
 }

@@ -5,7 +5,7 @@
 ![GitHub](https://img.shields.io/github/license/r-dent/FritzBoxKit)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/r-dent/FritzBoxKit/Swift)
 
-This aims to be Framework that provides a clean and modern Swift API for communicating with Fritz!Box routers. The focus is on home automation features.
+This aims to be a Framework that provides a clean and modern Swift API for communicating with Fritz!Box routers. The focus is on home automation features.
 
 ## Features
 
@@ -56,6 +56,7 @@ As I only have one home, this was only tested with the following setup.
 
 - Fritz!Box 7490 (FRITZ!OS 6.83)
 - 3x Fritz Dect 300 thermostat
+- 1x Fritz Dect 301 thermostat
 
 ## Installation
 

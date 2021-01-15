@@ -80,7 +80,7 @@ open class FritzBox: NSObject {
             let name = userName,
             let url = URL(string: "\(host)/login_sid.lua")
         else {
-            completion(.failure(FRZError(reason: "Name or URL missing or malformed.")))
+            completion(.failure(AuthError.invalidCredendials))
             return
         }
         
@@ -122,7 +122,7 @@ open class FritzBox: NSObject {
             let sessionId = self.sessionId,
             let url = URL(string: "\(host)/webservices/homeautoswitch.lua")
         else {
-            completion(.failure(FRZError(reason: "Session missing")))
+            completion(.failure(AuthError.sessionMissing))
             return
         }
         
