@@ -1,9 +1,9 @@
 #  Fritz!Box Kit
 
-[![CocoaPods](https://img.shields.io/cocoapods/v/FritzBox-Kit.svg)](http://cocoadocs.org/docsets/FritzBox-Kit)
+[![CocoaPods](https://img.shields.io/cocoapods/v/FritzBox-Kit.svg)](https://cocoapods.org/pods/FritzBox-Kit)
 [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 ![GitHub](https://img.shields.io/github/license/r-dent/FritzBoxKit)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/r-dent/FritzBoxKit/Swift)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/r-dent/FritzBoxKit/Swift)](https://github.com/r-dent/FritzBoxKit/actions)
 
 This aims to be a Framework that provides a clean and modern Swift API for communicating with Fritz!Box routers. The focus is on home automation features.
 

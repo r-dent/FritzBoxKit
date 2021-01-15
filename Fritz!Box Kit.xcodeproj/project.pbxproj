@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,9 +29,8 @@
 		3079743320163E9600D65712 /* devices.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3079743220163E9600D65712 /* devices.xml */; };
 		30D1E8FD2158EB2000BEC592 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1E8FC2158EB1F00BEC592 /* LoginViewController.swift */; };
 		30D1E8FF2158F53200BEC592 /* Instantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D1E8FE2158F53200BEC592 /* Instantiatable.swift */; };
-		7BB70D685962E9843488DC2E /* libPods-fritzboxkit-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B88FE428FA7C29BE1CDABAE /* libPods-fritzboxkit-Tests.a */; };
-		7C48161FA3DB13894A306CFE /* libPods-fritzboxkit-FritzBoxKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEE20CA6B8482DB908D62FC /* libPods-fritzboxkit-FritzBoxKit.a */; };
-		CDDE1DD8A8A6DFEBBD5BF109 /* libPods-fritzboxkit-Example App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB4513B0885C936E5CE29BB /* libPods-fritzboxkit-Example App.a */; };
+		30D608CA25B228BD00EECAE3 /* AEXML in Frameworks */ = {isa = PBXBuildFile; productRef = 30D608C925B228BD00EECAE3 /* AEXML */; };
+		30D608D025B228D700EECAE3 /* XMLMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 30D608CF25B228D700EECAE3 /* XMLMapper */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +56,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2C298B378F8C6DFFE61D010E /* Pods-fritzboxkit-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-Tests/Pods-fritzboxkit-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3019E3041FF184C6009AE220 /* Example App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3019E3071FF184C6009AE220 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3019E3091FF184C6009AE220 /* DeviceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListViewController.swift; sourceTree = "<group>"; };
@@ -84,14 +82,6 @@
 		3079743220163E9600D65712 /* devices.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = devices.xml; sourceTree = "<group>"; };
 		30D1E8FC2158EB1F00BEC592 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		30D1E8FE2158F53200BEC592 /* Instantiatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instantiatable.swift; sourceTree = "<group>"; };
-		58916D8A7751C554E45A5031 /* Pods-fritzboxkit-Example App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-Example App.release.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-Example App/Pods-fritzboxkit-Example App.release.xcconfig"; sourceTree = "<group>"; };
-		5CEB19E098FEF57C953FF0C1 /* Pods-fritzboxkit-FritzBoxKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-FritzBoxKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-FritzBoxKit/Pods-fritzboxkit-FritzBoxKit.release.xcconfig"; sourceTree = "<group>"; };
-		6B88FE428FA7C29BE1CDABAE /* libPods-fritzboxkit-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fritzboxkit-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		703DCD8D175F07EDBB3210B0 /* Pods-fritzboxkit-Example App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-Example App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-Example App/Pods-fritzboxkit-Example App.debug.xcconfig"; sourceTree = "<group>"; };
-		9E9BF84CBA9702DFA4D0AD4B /* Pods-fritzboxkit-FritzBoxKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-FritzBoxKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-FritzBoxKit/Pods-fritzboxkit-FritzBoxKit.debug.xcconfig"; sourceTree = "<group>"; };
-		9EB4513B0885C936E5CE29BB /* libPods-fritzboxkit-Example App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fritzboxkit-Example App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCEE20CA6B8482DB908D62FC /* libPods-fritzboxkit-FritzBoxKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fritzboxkit-FritzBoxKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F104803FBAB6DCB1E7B37E00 /* Pods-fritzboxkit-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fritzboxkit-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fritzboxkit-Tests/Pods-fritzboxkit-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +89,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30D608CA25B228BD00EECAE3 /* AEXML in Frameworks */,
+				30D608D025B228D700EECAE3 /* XMLMapper in Frameworks */,
 				3029904D215A418F00A29EF9 /* libFritzBoxKit.a in Frameworks */,
-				CDDE1DD8A8A6DFEBBD5BF109 /* libPods-fritzboxkit-Example App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +99,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BB70D685962E9843488DC2E /* libPods-fritzboxkit-Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +106,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C48161FA3DB13894A306CFE /* libPods-fritzboxkit-FritzBoxKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,8 +119,6 @@
 				3019E31B1FF184C6009AE220 /* Tests */,
 				30299035215A292200A29EF9 /* Sources */,
 				3019E3051FF184C6009AE220 /* Products */,
-				6C10FF20C0E5A3026BB116AF /* Pods */,
-				51DF8C264E26487BAE9482F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,29 +192,6 @@
 			path = TestResources;
 			sourceTree = "<group>";
 		};
-		51DF8C264E26487BAE9482F2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9EB4513B0885C936E5CE29BB /* libPods-fritzboxkit-Example App.a */,
-				BCEE20CA6B8482DB908D62FC /* libPods-fritzboxkit-FritzBoxKit.a */,
-				6B88FE428FA7C29BE1CDABAE /* libPods-fritzboxkit-Tests.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6C10FF20C0E5A3026BB116AF /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				703DCD8D175F07EDBB3210B0 /* Pods-fritzboxkit-Example App.debug.xcconfig */,
-				58916D8A7751C554E45A5031 /* Pods-fritzboxkit-Example App.release.xcconfig */,
-				9E9BF84CBA9702DFA4D0AD4B /* Pods-fritzboxkit-FritzBoxKit.debug.xcconfig */,
-				5CEB19E098FEF57C953FF0C1 /* Pods-fritzboxkit-FritzBoxKit.release.xcconfig */,
-				F104803FBAB6DCB1E7B37E00 /* Pods-fritzboxkit-Tests.debug.xcconfig */,
-				2C298B378F8C6DFFE61D010E /* Pods-fritzboxkit-Tests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -235,7 +199,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3019E3211FF184C6009AE220 /* Build configuration list for PBXNativeTarget "Example App" */;
 			buildPhases = (
-				9A768582E343391F79BAF717 /* [CP] Check Pods Manifest.lock */,
 				3019E3001FF184C6009AE220 /* Sources */,
 				3019E3011FF184C6009AE220 /* Frameworks */,
 				3019E3021FF184C6009AE220 /* Resources */,
@@ -245,6 +208,10 @@
 			dependencies = (
 			);
 			name = "Example App";
+			packageProductDependencies = (
+				30D608C925B228BD00EECAE3 /* AEXML */,
+				30D608CF25B228D700EECAE3 /* XMLMapper */,
+			);
 			productName = "Fritz!Box Kit";
 			productReference = 3019E3041FF184C6009AE220 /* Example App.app */;
 			productType = "com.apple.product-type.application";
@@ -253,7 +220,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3019E3241FF184C6009AE220 /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
-				3E77B6E60A8D626BFD0D9F12 /* [CP] Check Pods Manifest.lock */,
 				3019E3141FF184C6009AE220 /* Sources */,
 				3019E3151FF184C6009AE220 /* Frameworks */,
 				3019E3161FF184C6009AE220 /* Resources */,
@@ -272,7 +238,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3029903F215A3E8F00A29EF9 /* Build configuration list for PBXNativeTarget "FritzBoxKit" */;
 			buildPhases = (
-				A5BFF80A64BEC6E6C68EF1D1 /* [CP] Check Pods Manifest.lock */,
 				30299037215A3E8F00A29EF9 /* Sources */,
 				30299038215A3E8F00A29EF9 /* Frameworks */,
 				30299039215A3E8F00A29EF9 /* CopyFiles */,
@@ -322,6 +287,10 @@
 				Base,
 			);
 			mainGroup = 3019E2FB1FF184C6009AE220;
+			packageReferences = (
+				30D608C825B228BD00EECAE3 /* XCRemoteSwiftPackageReference "AEXML" */,
+				30D608CE25B228D700EECAE3 /* XCRemoteSwiftPackageReference "XMLMapper" */,
+			);
 			productRefGroup = 3019E3051FF184C6009AE220 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -353,63 +322,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		3E77B6E60A8D626BFD0D9F12 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-fritzboxkit-Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9A768582E343391F79BAF717 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-fritzboxkit-Example App-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A5BFF80A64BEC6E6C68EF1D1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-fritzboxkit-FritzBoxKit-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3019E3001FF184C6009AE220 /* Sources */ = {
@@ -587,7 +499,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -595,13 +508,15 @@
 		};
 		3019E3221FF184C6009AE220 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 703DCD8D175F07EDBB3210B0 /* Pods-fritzboxkit-Example App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SBPV56G7LG;
 				INFOPLIST_FILE = Example/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "rg.test.Fritz-Box-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -613,13 +528,15 @@
 		};
 		3019E3231FF184C6009AE220 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58916D8A7751C554E45A5031 /* Pods-fritzboxkit-Example App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SBPV56G7LG;
 				INFOPLIST_FILE = Example/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "rg.test.Fritz-Box-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -631,7 +548,6 @@
 		};
 		3019E3251FF184C6009AE220 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F104803FBAB6DCB1E7B37E00 /* Pods-fritzboxkit-Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -639,7 +555,11 @@
 				DEVELOPMENT_TEAM = SBPV56G7LG;
 				GENERATE_PKGINFO_FILE = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "rg.test.Fritz-Box-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -652,7 +572,6 @@
 		};
 		3019E3261FF184C6009AE220 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C298B378F8C6DFFE61D010E /* Pods-fritzboxkit-Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -660,7 +579,11 @@
 				DEVELOPMENT_TEAM = SBPV56G7LG;
 				GENERATE_PKGINFO_FILE = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "rg.test.Fritz-Box-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -673,7 +596,6 @@
 		};
 		30299040215A3E8F00A29EF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E9BF84CBA9702DFA4D0AD4B /* Pods-fritzboxkit-FritzBoxKit.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -695,7 +617,6 @@
 		};
 		30299041215A3E8F00A29EF9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5CEB19E098FEF57C953FF0C1 /* Pods-fritzboxkit-FritzBoxKit.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -754,6 +675,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		30D608C825B228BD00EECAE3 /* XCRemoteSwiftPackageReference "AEXML" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tadija/AEXML.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.3;
+			};
+		};
+		30D608CE25B228D700EECAE3 /* XCRemoteSwiftPackageReference "XMLMapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gcharita/XMLMapper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		30D608C925B228BD00EECAE3 /* AEXML */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30D608C825B228BD00EECAE3 /* XCRemoteSwiftPackageReference "AEXML" */;
+			productName = AEXML;
+		};
+		30D608CF25B228D700EECAE3 /* XMLMapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30D608CE25B228D700EECAE3 /* XCRemoteSwiftPackageReference "XMLMapper" */;
+			productName = XMLMapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3019E2FC1FF184C6009AE220 /* Project object */;
 }
