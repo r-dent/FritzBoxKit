@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'FritzBox-Kit'
-  s.version      = '0.3.1'
+  s.version      = '0.4.0'
 
   s.summary      = 'Swift SDK for communicating with Fritz! smart home devices.'
   s.author       = { 'Roman Gille' => 'developer@romangille.com' }
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => 'https://github.com/r-dent/FritzBoxKit.git', :tag => "v#{s.version}" }
   s.source_files = 'Sources/**/*.swift'
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
 
   s.dependency 'AEXML'
   s.dependency 'XMLMapper'

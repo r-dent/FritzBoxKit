@@ -62,7 +62,7 @@ As I only have one home, this was only tested with the following setup.
 
 When using [Swift Package Manager](https://swift.org/package-manager/) add this:
 
-    .package(url: "https://github.com/r-dent/FritzBoxKit.git", from: "0.3.2")
+    .package(url: "https://github.com/r-dent/FritzBoxKit.git", from: "0.4.0")
 
 If you´re using [CocoaPods](https://cocoapods.org/pods/FritzBox-Kit), add this to your Podfile: 
 
