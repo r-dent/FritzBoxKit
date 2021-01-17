@@ -11,8 +11,8 @@ This aims to be a Framework that provides a clean and modern Swift API for commu
 
 - [x] Authentication with API
 - [x] Load device information (currently limited to thermostats and switches)
+- [x] Toggle switches
 - [ ] Set Thermostat temperature
-- [ ] Toggle switches
 - [ ] Load thermostat timetable
 - [ ] manipulate thermostat timetable
 

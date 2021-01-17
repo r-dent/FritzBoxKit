@@ -68,11 +68,43 @@ class DeviceListViewController: UITableViewController, Instantiatable {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: "deviceCell")
         }
         
-        cell.textLabel?.text = String(format: "%@ - %.2f", device.displayName, device.temperature!.celsius) // device.displayName
+        let switchOnOff: String
+        if let switchState = device.powerSwitch?.state {
+            switchOnOff = switchState ? "ON" : "OFF"
+        } else {
+            switchOnOff = "-"
+        }
+        
+        cell.textLabel?.text = String(format: "%@ - %.2f - %@", device.displayName, device.temperature?.celsius ?? 0, switchOnOff)
         cell.detailTextLabel?.text = device.identifier
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let device = devices[indexPath.row]
+        
+        guard let switchState = device.powerSwitch?.state else {
+            print("device \(device.displayName) is not switchable")
+            return
+        }
+        fritzBox.setSwitch(identifier: device.identifier, on: !switchState, completion: { [weak self] result in
 
+            switch result {
+
+            case .success(let switchState):
+                print("Info: device \(device.displayName) is now \(switchState ? "on" : "off")")
+
+                self?.devices[indexPath.row].powerSwitch?.state = switchState
+
+            case .failure(let error):
+                print("Switch Error: \(error)")
+            }
+            
+            DispatchQueue.main.async {
+                tableView.reloadRows(at: [indexPath], with: .none)
+            }
+        })
+    }
 }
 
