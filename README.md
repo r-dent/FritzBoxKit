@@ -2,7 +2,7 @@
 
 [![CocoaPods](https://img.shields.io/cocoapods/v/FritzBox-Kit.svg)](https://cocoapods.org/pods/FritzBox-Kit)
 [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
-![GitHub](https://img.shields.io/github/license/r-dent/FritzBoxKit)
+[![GitHub](https://img.shields.io/github/license/r-dent/FritzBoxKit)](https://github.com/r-dent/FritzBoxKit/blob/master/LICENSE)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/r-dent/FritzBoxKit/Swift)](https://github.com/r-dent/FritzBoxKit/actions)
 
 This aims to be a Framework that provides a clean and modern Swift API for communicating with Fritz!Box routers. The focus is on home automation features.
@@ -62,7 +62,7 @@ As I only have one home, this was only tested with the following setup.
 
 When using [Swift Package Manager](https://swift.org/package-manager/) add this:
 
-    .package(url: "https://github.com/r-dent/FritzBoxKit.git", from: "0.4.0")
+    .package(url: "https://github.com/r-dent/FritzBoxKit.git", from: "0.5.0")
 
 If you´re using [CocoaPods](https://cocoapods.org/pods/FritzBox-Kit), add this to your Podfile: 
 
