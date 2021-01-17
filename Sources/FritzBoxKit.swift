@@ -32,7 +32,10 @@ import AEXML
 open class FritzBox: NSObject {
     
     public typealias LoginCompletionBlock = (Result<SessionInfo, Error>) -> ()
+    public typealias LogoutCompletionBlock = LoginCompletionBlock
     public typealias DeviceListCompletionBlock = (Result<[SmartHomeDevice], Error>) -> ()
+    public typealias SwitchCompletionBlock = (Result<Bool, Error>) -> ()
+    
     
     var host: String
     
@@ -113,6 +116,44 @@ open class FritzBox: NSObject {
         }
     }
     
+    /// Log out from Fritz!Box device.
+    /// URL is used from the initialization values.
+    ///
+    /// - Parameter completion: A block to handle the result/errors of the request.
+    public func logout(completion: LogoutCompletionBlock?) {
+        guard
+            let sessionId = self.sessionId,
+            let url = URL(string: "\(host)/login_sid.lua")
+        else {
+            completion?(.failure(AuthError.sessionMissing))
+            return
+        }
+        
+        let params: Parameters = [
+            "sid": sessionId,
+            "logout": "1"
+        ]
+        
+        let logout = Resource<SessionInfo>(
+            url: url,
+            method: .get,
+            params: params,
+            parse: {
+                guard let sessionInfo = SessionInfo(XMLString: $0) else {
+                    throw Resource<SessionInfo>.ParseError.mappingFailed
+                }
+                return sessionInfo
+        })
+        load(logout) { result in
+            // consider us as logged out in both cases success and failure
+            
+            // unset session ID.
+            self.sessionId = nil
+            self.sessionIdReceived = .distantPast
+            completion?(result)
+        }
+    }
+    
     
     /// Load a list of all available smart home devices.
     ///
@@ -144,6 +185,44 @@ open class FritzBox: NSObject {
         })
         
         load(getDevices, completion: completion)
+    }
+    
+    
+    /// Switch smart home device on or off.
+    ///
+    /// - Parameters:
+    ///     - identifier: The identification number (ain) of the device.
+    ///     - on: true: on, false: off.
+    ///     - completion: A block to handle the result of the switch.
+    public func setSwitch(identifier: String, on: Bool, completion: @escaping SwitchCompletionBlock) {
+        guard
+            let sessionId = self.sessionId,
+            let url = URL(string: "\(host)/webservices/homeautoswitch.lua")
+        else {
+            completion(.failure(AuthError.sessionMissing))
+            return
+        }
+        
+        let params: Parameters = [
+            "sid": sessionId,
+            "ain": identifier,
+            "switchcmd": on ? "setswitchon" : "setswitchoff"
+        ]
+        typealias SmartHomeSwitchStateResource = Resource<Bool>
+        
+        let setSwitch = SmartHomeSwitchStateResource(
+            url: url,
+            method: .get,
+            params: params,
+            parse: {
+                let result = $0.trimmingCharacters(in: .whitespacesAndNewlines)
+                guard result == "0" || result == "1" else { // "0" = off, "1" = on
+                    throw SmartHomeSwitchStateResource.ParseError.mappingFailed
+                }
+                return result == "1"
+        })
+        
+        load(setSwitch, completion: completion)
     }
 }
 
