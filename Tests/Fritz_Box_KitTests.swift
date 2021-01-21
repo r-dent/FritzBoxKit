@@ -53,6 +53,7 @@ class MappingTests: XCTestCase {
             
             switch index {
             case 1: // Radiator regulator.
+                XCTAssertEqual(device.present, true, "Present state should match.")
                 XCTAssertEqual(device.displayName, "Kinderzimmer", "Display name should match.")
                 XCTAssertEqual(device.temperature?.celsius, 22, "Temp. should match.")
                 XCTAssertEqual(device.temperature?.offset, 0, "Temp. should match.")
@@ -69,6 +70,7 @@ class MappingTests: XCTestCase {
                 XCTAssertEqual(device.hkr?.batteryLow, true, "Value should match.")
                 
             case 2: // Radiator regulator.
+                XCTAssertEqual(device.present, true, "Present state should match.")
                 XCTAssertEqual(device.displayName, "Küche", "Display name should match.")
                 XCTAssertEqual(device.temperature?.celsius, 23, "Temp. should match.")
                 XCTAssertEqual(device.temperature?.offset, 0, "Temp. should match.")
@@ -85,6 +87,7 @@ class MappingTests: XCTestCase {
                 XCTAssertEqual(device.hkr?.batteryLow, false, "Value should match.")
                 
             case 3: // Power switch.
+                XCTAssertEqual(device.present, true, "Present state should match.")
                 XCTAssertEqual(device.productName, "FRITZ!DECT 200", "Product name should match.")
                 XCTAssertEqual(device.displayName, "Steckdose", "Display name should match.")
                 XCTAssertEqual(device.features, [.temperatureSensor, .powerSwitch, .energySensor], "Features should match")
@@ -101,6 +104,7 @@ class MappingTests: XCTestCase {
                 XCTAssertEqual(device.powerMeter?.energy, 5.419, "Energy should match")
                 
             default: // First element in the list.
+                XCTAssertEqual(device.present, true, "Present state should match.")
                 XCTAssertEqual(device.displayName, "Wohnzimmer", "Display name should match.")
                 XCTAssertEqual(device.temperature?.celsius, 24.5, "Temp. should match.")
                 XCTAssertEqual(device.temperature?.offset, -20, "Temp. should match.")

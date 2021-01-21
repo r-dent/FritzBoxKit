@@ -54,6 +54,7 @@ extension FritzBox {
         public var identifier: String = ""
         public var features: Feature = []
         public var manufacturer: String = ""
+        public var present: Bool = false
         public var productName: String = ""
         public var displayName: String = ""
         
@@ -73,6 +74,7 @@ extension FritzBox {
             identifier      <- map.attributes["identifier"]
             manufacturer    <- map.attributes["manufacturer"]
             productName     <- map.attributes["productname"]
+            present         <- map["present"]
             displayName     <- map["name"]
             
             temperature     <- map["temperature"]
