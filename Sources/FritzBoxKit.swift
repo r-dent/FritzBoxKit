@@ -108,6 +108,11 @@ open class FritzBox: NSObject {
         load(authentication) { result in
 
             if case .success(let sessionInfo) = result {
+                guard sessionInfo.sid != "0000000000000000" else {
+                    // username or password is invalid
+                    completion(.failure(AuthError.invalidCredendials))
+                    return
+                }
                 // Save session ID for later use.
                 self.sessionId = sessionInfo.sid
                 self.sessionIdReceived = Date()
